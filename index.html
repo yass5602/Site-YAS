@@ -1,276 +1,705 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="fr" dir="ltr" data-theme="dark">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-  <title>YAS Motion – Video Editing Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="./style.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Yasin — Montage x Motion Graphique</title>
+<meta name="description" content="Monteur vidéo & développeur web. Montage vertical qui retient l'attention, sites web qui convertissent. Basé en Algérie, disponible à l'international."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="./style.css">
 </head>
 <body>
- 
-<nav>
-  <div class="logo">YAS<span>.</span>MOTION</div>
+
+<!-- ============ LOGO SVG (sprite réutilisable) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gChev" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2E92E0"/>
+      <stop offset="55%" stop-color="#2A1B8E"/>
+      <stop offset="100%" stop-color="#1B1466"/>
+    </linearGradient>
+    <linearGradient id="gTri" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8A0BF0"/>
+      <stop offset="100%" stop-color="#F003D1"/>
+    </linearGradient>
+    <symbol id="mark" viewBox="0 0 96.98 100">
+      <path class="mk-chev" d="M3.63,0.30 L28.10,0.60 L29.91,1.51 L55.89,51.06 L55.89,55.29 L41.39,80.97 L33.53,96.37 L31.72,98.19 L28.70,99.40 L5.74,99.70 L3.63,97.58 L3.93,93.96 L25.08,55.59 L25.98,53.78 L25.98,51.36 L0.00,6.34 L0.00,3.02 L1.51,1.21 L3.32,0.60 Z"/>
+      <path class="mk-tri" d="M60.42,0.00 L62.84,0.00 L64.95,1.21 L93.96,20.85 L96.37,23.26 L96.68,24.17 L96.98,26.28 L96.07,29.00 L93.66,31.42 L85.80,37.16 L62.54,52.87 L59.21,52.87 L58.01,51.06 L57.70,45.32 L57.40,4.53 L58.31,1.81 L60.12,0.30 Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a href="#reels" class="skip-link" id="skip-link">Aller au contenu</a>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <a href="#top" class="brand" aria-label="Yasin — montage x motion graphique">
+    <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg>
+    <span class="brand-text">
+      <strong>Yasin</strong>
+      <small id="brand-tag">montage x motion graphique</small>
+    </span>
+  </a>
+
+  <div class="nav-links" id="nav-links">
+    <a href="#reels" id="nl-reels">Reels</a>
+    <a href="#sites" id="nl-sites">Sites web</a>
+    <a href="#services" id="nl-services">Services</a>
+    <a href="#about" id="nl-about">À propos</a>
+  </div>
+
   <div class="nav-right">
+    <button class="icon-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Changer de thème">
+      <svg class="ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g class="rays"><path d="M12 1.6v3M12 19.4v3M1.6 12h3M19.4 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1"/></g></svg>
+      <svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.4 8.4 0 1 1 9.8 4a6.8 6.8 0 0 0 10.2 10.2Z"/></svg>
+    </button>
     <div class="lang-toggle" role="group" aria-label="Langue">
       <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
       <button class="lang-btn" id="btn-ar" onclick="setLang('ar')">ع</button>
     </div>
-    <a href="#contact" class="nav-cta" id="nav-cta-text">Me contacter</a>
+    <a href="#contact" class="btn-primary sm" id="nav-cta-text">Me contacter</a>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
- 
-<section class="hero">
-  <div class="hero-content">
-    <p class="hero-eyebrow" id="hero-eyebrow">Video Editing Studio &middot; Alg&eacute;rie</p>
-    <h1 id="hero-h1">Vos vid&eacute;os,<br/><em>élevées</em> au<br/>niveau sup&eacute;rieur.</h1>
-    <p class="hero-sub" id="hero-sub">Montage professionnel pour cr&eacute;ateurs de contenu, marques et entreprises. Du cut brut au rendu final soign&eacute;.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary" id="btn-start">D&eacute;marrer un projet</a>
-      <a href="#services" class="btn-ghost" id="btn-services">Voir les services</a>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <div class="hero-grid">
+    <div class="hero-content">
+      <p class="eyebrow" id="hero-eyebrow">Monteur vidéo &amp; développeur web · Algérie</p>
+      <h1 id="hero-h1">Transformez,<br/>Captivez,<br/><em>Yassifiez.</em></h1>
+      <p class="lead" id="hero-sub">Des formats verticaux qui retiennent l'attention jusqu'à la dernière seconde, et des sites web qui transforment cette attention en clients.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary" id="btn-start">Démarrer un projet</a>
+        <a href="#reels" class="btn-ghost" id="btn-services">Voir le portfolio</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>50+</b><span id="hs1">projets livrés</span></div>
+        <div><b>12M+</b><span id="hs2">vues générées</span></div>
+        <div><b>3+</b><span id="hs3">ans d'expérience</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="photo-frame">
+        <img src="./img/profil.png" alt="Yasin Muhammad Chikh" onerror="this.style.display='none'"/>
+        <svg class="float-mark" aria-hidden="true"><use href="#mark"/></svg>
+      </div>
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span id="hero-badge-txt">Disponible pour de nouveaux projets</span>
+      </div>
     </div>
   </div>
-  <div class="hero-photo">
-    <div class="photo-card">
-        <img src="./img/profil.png" alt="Photo de profil">
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Premiere Pro</span><i>✦</i><span>After Effects</span><i>✦</i><span>DaVinci Resolve</span><i>✦</i><span>Motion Design</span><i>✦</i><span>Sound Design</span><i>✦</i><span>Webflow</span><i>✦</i><span>React</span><i>✦</i><span>SEO</span><i>✦</i>
+      <span>Premiere Pro</span><i>✦</i><span>After Effects</span><i>✦</i><span>DaVinci Resolve</span><i>✦</i><span>Motion Design</span><i>✦</i><span>Sound Design</span><i>✦</i><span>Webflow</span><i>✦</i><span>React</span><i>✦</i><span>SEO</span><i>✦</i>
     </div>
+  </div>
+</header>
+
+<!-- ============ REELS / VIDÉOS VERTICALES ============
+     COMMENT REMPLACER UN PLACEHOLDER PAR UNE VRAIE VIDÉO :
+     remplacer  <div class="reel-ph" ...><span class="play"></span></div>
+     par        <video class="reel-ph" src="./img/reels/reel-1.mp4"
+                       poster="./img/reels/reel-1.jpg"
+                       muted loop playsinline controls></video>
+     (la classe .reel-ph garde le bon cadrage 9:16 et les coins arrondis)
+     Les chiffres des cartes de performance sont des exemples : à remplacer
+     par les vrais résultats dans les blocs .perf-grid ci-dessous.
+     La barre .perf-bar reflète le taux de rétention : style="--v:78%"
+     ==================================================== -->
+<section class="section" id="reels">
+  <div class="section-head">
+    <p class="eyebrow" id="lbl-reels">Portfolio vidéo</p>
+    <h2 id="reels-h2">Formats verticaux <em>qui performent</em></h2>
+    <p class="section-sub" id="reels-sub">Chaque montage est pensé pour la rétention : hook dans les 2 premières secondes, rythme serré, sous-titres lisibles. Voici les résultats.</p>
+  </div>
+
+  <div class="reels-grid">
+
+    <!-- Reel 1 -->
+    <article class="reel-card">
+      <div class="reel-media" data-tag="Sodebo">
+        <div class="reel-ph" aria-hidden="true"><span class="play"></span></div>
+        <div class="reel-overlay">
+          <p class="reel-hook">« Le secret que les chefs ne vous disent pas »</p>
+          <span class="reel-dur">0:38</span>
+        </div>
+      </div>
+      <div class="perf-card">
+        <div class="perf-title"><span class="perf-client">Sodebo</span><span class="perf-type" >Reel Instagram</span></div>
+        <div class="perf-grid">
+          <div class="kpi"><b>2,4M</b><small data-i18n="vues">vues</small></div>
+          <div class="kpi"><b>78%</b><small data-i18n="retention">rétention</small></div>
+          <div class="kpi accent"><b>+310%</b><small data-i18n="engagement">engagement</small></div>
+        </div>
+        <div class="perf-bar"><i style="--v:78%"></i></div>
+      </div>
+    </article>
+
+    <!-- Reel 2 -->
+    <article class="reel-card">
+      <div class="reel-media" data-tag="Gameward">
+        <div class="reel-ph v2" aria-hidden="true"><span class="play"></span></div>
+        <div class="reel-overlay">
+          <p class="reel-hook">« Le clutch qui a changé la saison »</p>
+          <span class="reel-dur">0:52</span>
+        </div>
+      </div>
+      <div class="perf-card">
+        <div class="perf-title"><span class="perf-client">Gameward</span><span class="perf-type">TikTok esport</span></div>
+        <div class="perf-grid">
+          <div class="kpi"><b>1,1M</b><small data-i18n="vues">vues</small></div>
+          <div class="kpi"><b>71%</b><small data-i18n="retention">rétention</small></div>
+          <div class="kpi accent"><b>+8,4K</b><small data-i18n="abonnes">abonnés</small></div>
+        </div>
+        <div class="perf-bar"><i style="--v:71%"></i></div>
+      </div>
+    </article>
+
+    <!-- Reel 3 -->
+    <article class="reel-card">
+      <div class="reel-media" data-tag="DMB Immobilier">
+        <div class="reel-ph v3" aria-hidden="true"><span class="play"></span></div>
+        <div class="reel-overlay">
+          <p class="reel-hook">« Visite d'un T4 à 180 000 € »</p>
+          <span class="reel-dur">0:45</span>
+        </div>
+      </div>
+      <div class="perf-card">
+        <div class="perf-title"><span class="perf-client">DMB Immobilier</span><span class="perf-type">Reel + Ads</span></div>
+        <div class="perf-grid">
+          <div class="kpi"><b>640K</b><small data-i18n="vues">vues</small></div>
+          <div class="kpi"><b>65%</b><small data-i18n="retention">rétention</small></div>
+          <div class="kpi accent"><b>14</b><small data-i18n="visites-gen">visites générées</small></div>
+        </div>
+        <div class="perf-bar"><i style="--v:65%"></i></div>
+      </div>
+    </article>
+
+    <!-- Reel 4 -->
+    <article class="reel-card">
+      <div class="reel-media" data-tag="Nova Coaching">
+        <div class="reel-ph v4" aria-hidden="true"><span class="play"></span></div>
+        <div class="reel-overlay">
+          <p class="reel-hook">« 3 erreurs qui tuent ta productivité »</p>
+          <span class="reel-dur">0:41</span>
+        </div>
+      </div>
+      <div class="perf-card">
+        <div class="perf-title"><span class="perf-client">Nova Coaching</span><span class="perf-type">YouTube Shorts</span></div>
+        <div class="perf-grid">
+          <div class="kpi"><b>890K</b><small data-i18n="vues">vues</small></div>
+          <div class="kpi"><b>82%</b><small data-i18n="retention">rétention</small></div>
+          <div class="kpi accent"><b>−12 h</b><small data-i18n="gain-temps">gain / mois</small></div>
+        </div>
+        <div class="perf-bar"><i style="--v:82%"></i></div>
+      </div>
+    </article>
+
+    <!-- Reel 5 -->
+    <article class="reel-card">
+      <div class="reel-media" data-tag="Atlas Fitness">
+        <div class="reel-ph v5" aria-hidden="true"><span class="play"></span></div>
+        <div class="reel-overlay">
+          <p class="reel-hook">« 30 jours, un seul exercice »</p>
+          <span class="reel-dur">0:29</span>
+        </div>
+      </div>
+      <div class="perf-card">
+        <div class="perf-title"><span class="perf-client">Atlas Fitness</span><span class="perf-type">Reel Instagram</span></div>
+        <div class="perf-grid">
+          <div class="kpi"><b>3,2M</b><small data-i18n="vues">vues</small></div>
+          <div class="kpi"><b>74%</b><small data-i18n="retention">rétention</small></div>
+          <div class="kpi accent"><b>+21K €</b><small data-i18n="ca">CA généré</small></div>
+        </div>
+        <div class="perf-bar"><i style="--v:74%"></i></div>
+      </div>
+    </article>
+
+    <!-- Reel 6 -->
+    <article class="reel-card">
+      <div class="reel-media" data-tag="Maison Yasmine">
+        <div class="reel-ph v6" aria-hidden="true"><span class="play"></span></div>
+        <div class="reel-overlay">
+          <p class="reel-hook">« Notre collection en 40 secondes »</p>
+          <span class="reel-dur">0:40</span>
+        </div>
+      </div>
+      <div class="perf-card">
+        <div class="perf-title"><span class="perf-client">Maison Yasmine</span><span class="perf-type">Campagne TikTok</span></div>
+        <div class="perf-grid">
+          <div class="kpi"><b>1,7M</b><small data-i18n="vues">vues</small></div>
+          <div class="kpi"><b>69%</b><small data-i18n="retention">rétention</small></div>
+          <div class="kpi accent"><b>×3,8</b><small data-i18n="roas">ROAS</small></div>
+        </div>
+        <div class="perf-bar"><i style="--v:69%"></i></div>
+      </div>
+    </article>
+
   </div>
 </section>
- 
-<hr class="divider"/>
- 
-<section class="clients-section" id="clients">
-  <p class="section-label" id="lbl-clients">Ils m&rsquo;ont fait confiance</p>
-  <div class="testimonials-grid">
- 
-    <!-- Sodebo -->
-    <div class="testi-card">
-      <div class="testi-header">
-        <div class="testi-logo sodebo">
-            <img src="https://framerusercontent.com/images/OC2t6gzzIMzWwfBS0He3KzH5xs.png?width=225&height=225" alt="S">
+
+<!-- ============ SITES WEB ============
+     POUR CHAQUE CARTE :
+     · href="..."            → l'URL réelle du site du client
+     · <em>domaine.com</em>  → le domaine affiché dans la barre du navigateur
+     · --shot:url('...')     → la capture d'écran du site (déposer le fichier
+                               dans ./img/sites/). Tant qu'aucune image n'est
+                               présente, un faux wireframe dégradé s'affiche.
+     · --c1 / --c2           → les 2 couleurs du dégradé de secours
+     · .offer-badge          → classes disponibles : essentiel | premium | signature
+     · --score:96            → remplit l'anneau du score SEO (pense à changer
+                               aussi le chiffre dans le <b> juste en dessous)
+     ==================================== -->
+<section class="section alt" id="sites">
+  <div class="section-head">
+    <p class="eyebrow" id="lbl-sites">Portfolio web</p>
+    <h2 id="sites-h2">Des sites <em>rapides, propres, trouvables</em></h2>
+    <p class="section-sub" id="sites-sub">Conception, intégration et SEO technique. Des pages qui chargent vite, se positionnent et convertissent.</p>
+  </div>
+
+  <div class="sites-grid">
+
+    <!-- Site 1 -->
+    <article class="site-card">
+      <a class="site-shot" href="https://exemple-sodebo.com" target="_blank" rel="noopener" style="--shot:url('./img/sites/site-1.jpg'); --c1:#2E92E0; --c2:#521B89;">
+        <span class="chrome"><i></i><i></i><i></i><em>exemple-sodebo.com</em></span>
+        <span class="shot-inner"></span>
+        <span class="shot-cta" id="sc1">Voir le site ↗</span>
+      </a>
+      <div class="site-body">
+        <div class="site-head">
+          <h3>Sodebo — Site vitrine</h3>
+          <span class="offer-badge premium" id="ob1">Offre Premium</span>
         </div>
-        <div class="testi-meta">
-          <div class="testi-name">Sodebo</div>
-          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="site-desc" id="sd1">Refonte complète, 8 pages, blog et optimisation Core Web Vitals.</p>
+        <div class="seo-row">
+          <div class="seo-ring" style="--score:96">
+            <svg viewBox="0 0 44 44" aria-hidden="true"><circle class="ring-bg" cx="22" cy="22" r="18"/><circle class="ring-fg" cx="22" cy="22" r="18"/></svg>
+            <b>96</b>
+          </div>
+          <div class="seo-meta">
+            <span class="seo-lbl" id="seo1">Score SEO</span>
+            <span class="seo-note" id="seon1">Lighthouse · mobile</span>
+          </div>
+          <div class="site-kpis">
+            <div class="kpi"><b>4 200</b><small data-i18n="visites-sem">visites/sem.</small></div>
+            <div class="kpi"><b>6,8%</b><small data-i18n="ctr">taux de clic</small></div>
+            <div class="kpi"><b>128K</b><small data-i18n="impressions">impressions/mois</small></div>
+          </div>
         </div>
       </div>
-      <p class="testi-quote" id="t1-quote">Yasin a livr&eacute; un montage impeccable pour notre campagne. R&eacute;actif, professionnel et &agrave; l&rsquo;&eacute;coute &mdash; exactement ce dont on avait besoin.</p>
-    </div>
- 
-    <!-- Gameward -->
-    <div class="testi-card">
-      <div class="testi-header">
-        <div class="testi-logo gameward">
-            <img src="https://framerusercontent.com/images/2ZVyTkkxSkXGszoZWiAnmbCpssw.jpg?width=900&height=900" alt="G">
+    </article>
+
+    <!-- Site 2 -->
+    <article class="site-card">
+      <a class="site-shot" href="https://exemple-gameward.gg" target="_blank" rel="noopener" style="--shot:url('./img/sites/site-2.jpg'); --c1:#8A0BF0; --c2:#F003D1;">
+        <span class="chrome"><i></i><i></i><i></i><em>exemple-gameward.gg</em></span>
+        <span class="shot-inner"></span>
+        <span class="shot-cta" id="sc2">Voir le site ↗</span>
+      </a>
+      <div class="site-body">
+        <div class="site-head">
+          <h3>Gameward — Hub esport</h3>
+          <span class="offer-badge signature" id="ob2">Offre Signature</span>
         </div>
-        <div class="testi-meta">
-          <div class="testi-name">Gameward</div>
-          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="site-desc" id="sd2">Plateforme roster, calendrier de matchs et boutique connectée.</p>
+        <div class="seo-row">
+          <div class="seo-ring" style="--score:91">
+            <svg viewBox="0 0 44 44" aria-hidden="true"><circle class="ring-bg" cx="22" cy="22" r="18"/><circle class="ring-fg" cx="22" cy="22" r="18"/></svg>
+            <b>91</b>
+          </div>
+          <div class="seo-meta">
+            <span class="seo-lbl" id="seo2">Score SEO</span>
+            <span class="seo-note" id="seon2">Lighthouse · mobile</span>
+          </div>
+          <div class="site-kpis">
+            <div class="kpi"><b>11 500</b><small data-i18n="visites-sem">visites/sem.</small></div>
+            <div class="kpi"><b>9,2%</b><small data-i18n="ctr">taux de clic</small></div>
+            <div class="kpi"><b>340K</b><small data-i18n="impressions">impressions/mois</small></div>
+          </div>
         </div>
       </div>
-      <p class="testi-quote" id="t2-quote">Notre contenu esport n&rsquo;a jamais &eacute;t&eacute; aussi dynamique. Yasin comprend parfaitement les codes visuels du gaming. On recommande &agrave; 100&nbsp;%.</p>
-    </div>
- 
-    <!-- DMB Immobilier -->
-    <div class="testi-card">
-      <div class="testi-header">
-        <div class="testi-logo dmb">
-            <img src="https://framerusercontent.com/images/rpNCEIvqPLEzVYVBL9D5XKDpsfE.png?width=225&height=225" alt="D">
+    </article>
+
+    <!-- Site 3 -->
+    <article class="site-card">
+      <a class="site-shot" href="https://exemple-dmb.fr" target="_blank" rel="noopener" style="--shot:url('./img/sites/site-3.jpg'); --c1:#1B1466; --c2:#2E92E0;">
+        <span class="chrome"><i></i><i></i><i></i><em>exemple-dmb.fr</em></span>
+        <span class="shot-inner"></span>
+        <span class="shot-cta" id="sc3">Voir le site ↗</span>
+      </a>
+      <div class="site-body">
+        <div class="site-head">
+          <h3>DMB Immobilier — Portail</h3>
+          <span class="offer-badge essentiel" id="ob3">Offre Essentiel</span>
         </div>
-        <div class="testi-meta">
-          <div class="testi-name">DMB Immobilier</div>
-          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="site-desc" id="sd3">Catalogue de biens filtrable, visites vidéo intégrées, formulaire qualifié.</p>
+        <div class="seo-row">
+          <div class="seo-ring" style="--score:88">
+            <svg viewBox="0 0 44 44" aria-hidden="true"><circle class="ring-bg" cx="22" cy="22" r="18"/><circle class="ring-fg" cx="22" cy="22" r="18"/></svg>
+            <b>88</b>
+          </div>
+          <div class="seo-meta">
+            <span class="seo-lbl" id="seo3">Score SEO</span>
+            <span class="seo-note" id="seon3">Lighthouse · mobile</span>
+          </div>
+          <div class="site-kpis">
+            <div class="kpi"><b>2 800</b><small data-i18n="visites-sem">visites/sem.</small></div>
+            <div class="kpi"><b>5,4%</b><small data-i18n="ctr">taux de clic</small></div>
+            <div class="kpi"><b>76K</b><small data-i18n="impressions">impressions/mois</small></div>
+          </div>
         </div>
       </div>
-      <p class="testi-quote" id="t3-quote">Les vid&eacute;os de pr&eacute;sentation r&eacute;alis&eacute;es par Yasin ont nettement augment&eacute; l&rsquo;engagement sur nos biens. Travail soign&eacute; et livraison dans les d&eacute;lais.</p>
-    </div>
- 
+    </article>
+
+    <!-- Site 4 -->
+    <article class="site-card">
+      <a class="site-shot" href="https://exemple-atlas.fit" target="_blank" rel="noopener" style="--shot:url('./img/sites/site-4.jpg'); --c1:#521B89; --c2:#F003D1;">
+        <span class="chrome"><i></i><i></i><i></i><em>exemple-atlas.fit</em></span>
+        <span class="shot-inner"></span>
+        <span class="shot-cta" id="sc4">Voir le site ↗</span>
+      </a>
+      <div class="site-body">
+        <div class="site-head">
+          <h3>Atlas Fitness — Landing</h3>
+          <span class="offer-badge essentiel" id="ob4">Offre Essentiel</span>
+        </div>
+        <p class="site-desc" id="sd4">Page de vente one-page, réservation de séance et tunnel d'abonnement.</p>
+        <div class="seo-row">
+          <div class="seo-ring" style="--score:99">
+            <svg viewBox="0 0 44 44" aria-hidden="true"><circle class="ring-bg" cx="22" cy="22" r="18"/><circle class="ring-fg" cx="22" cy="22" r="18"/></svg>
+            <b>99</b>
+          </div>
+          <div class="seo-meta">
+            <span class="seo-lbl" id="seo4">Score SEO</span>
+            <span class="seo-note" id="seon4">Lighthouse · mobile</span>
+          </div>
+          <div class="site-kpis">
+            <div class="kpi"><b>6 100</b><small data-i18n="visites-sem">visites/sem.</small></div>
+            <div class="kpi"><b>11,7%</b><small data-i18n="ctr">taux de clic</small></div>
+            <div class="kpi"><b>195K</b><small data-i18n="impressions">impressions/mois</small></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
   </div>
 </section>
- 
-<hr class="divider"/>
- 
+
+<!-- ============ SERVICES ============ -->
 <section class="section" id="services">
-  <p class="section-label" id="lbl-services">Services</p>
+  <div class="section-head">
+    <p class="eyebrow" id="lbl-services">Services</p>
+    <h2 id="services-h2">Ce que je peux <em>faire pour vous</em></h2>
+  </div>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon">&#127916;</div>
-      <h3 id="s1-title">Montage YouTube &amp; R&eacute;seaux sociaux</h3>
-      <p id="s1-desc">Cuts dynamiques, transitions fluides et rythme narratif adapt&eacute; &agrave; chaque plateforme &mdash; YouTube, Instagram Reels, TikTok.</p>
+      <div class="service-ico">01</div>
+      <h3 id="s1-title">Montage vertical &amp; social</h3>
+      <p id="s1-desc">Reels, TikTok et Shorts calibrés pour la rétention : hook, rythme, sous-titres animés, sound design.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">&#127909;</div>
-      <h3 id="s2-title">Publicit&eacute; &amp; Corporate</h3>
-      <p id="s2-desc">Vid&eacute;os institutionnelles, spots publicitaires et pr&eacute;sentations d&rsquo;entreprise au rendu professionnel et percutant.</p>
+      <div class="service-ico">02</div>
+      <h3 id="s2-title">Publicité &amp; corporate</h3>
+      <p id="s2-desc">Spots publicitaires, films institutionnels et présentations d'entreprise au rendu premium.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">&#9997;</div>
-      <h3 id="s3-title">Sous-titrage &amp; Motion Graphics</h3>
-      <p id="s3-desc">Sous-titres synchronis&eacute;s, animations typographiques et &eacute;l&eacute;ments graphiques qui donnent vie &agrave; votre message.</p>
+      <div class="service-ico">03</div>
+      <h3 id="s3-title">Motion graphics</h3>
+      <p id="s3-desc">Habillages, logos animés, typographies cinétiques et transitions sur mesure sous After Effects.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-ico">04</div>
+      <h3 id="s4-title">Création de sites web</h3>
+      <p id="s4-desc">Sites vitrines, landing pages et portails sur mesure — rapides, responsives et optimisés SEO.</p>
     </div>
   </div>
 </section>
- 
-<hr class="divider"/>
- 
+
+<!-- ============ TÉMOIGNAGES ============ -->
+<section class="section alt" id="clients">
+  <div class="section-head">
+    <p class="eyebrow" id="lbl-clients">Ils m'ont fait confiance</p>
+    <h2 id="clients-h2">Retours <em>clients</em></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testi-card">
+      <div class="testi-header">
+        <div class="testi-logo"><img src="https://framerusercontent.com/images/OC2t6gzzIMzWwfBS0He3KzH5xs.png?width=225&height=225" alt="Sodebo"></div>
+        <div class="testi-meta"><div class="testi-name">Sodebo</div><div class="testi-stars">★★★★★</div></div>
+      </div>
+      <p class="testi-quote" id="t1-quote">Yasin a livré un montage impeccable pour notre campagne. Réactif, professionnel et à l'écoute — exactement ce dont on avait besoin.</p>
+    </div>
+    <div class="testi-card">
+      <div class="testi-header">
+        <div class="testi-logo"><img src="https://framerusercontent.com/images/2ZVyTkkxSkXGszoZWiAnmbCpssw.jpg?width=900&height=900" alt="Gameward"></div>
+        <div class="testi-meta"><div class="testi-name">Gameward</div><div class="testi-stars">★★★★★</div></div>
+      </div>
+      <p class="testi-quote" id="t2-quote">Notre contenu esport n'a jamais été aussi dynamique. Yasin comprend parfaitement les codes visuels du gaming. On recommande à 100 %.</p>
+    </div>
+    <div class="testi-card">
+      <div class="testi-header">
+        <div class="testi-logo"><img src="https://framerusercontent.com/images/rpNCEIvqPLEzVYVBL9D5XKDpsfE.png?width=225&height=225" alt="DMB Immobilier"></div>
+        <div class="testi-meta"><div class="testi-name">DMB Immobilier</div><div class="testi-stars">★★★★★</div></div>
+      </div>
+      <p class="testi-quote" id="t3-quote">Les vidéos de présentation réalisées par Yasin ont nettement augmenté l'engagement sur nos biens. Travail soigné et livraison dans les délais.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ À PROPOS ============ -->
 <section class="section" id="about">
   <div class="about-layout">
     <div class="about-text">
-      <p class="section-label" id="lbl-about">&Agrave; propos</p>
-      <h2 id="about-h2">Yasin Muhammad<br/><span>CHIKH</span></h2>
-      <p id="about-p1">&Eacute;diteur vid&eacute;o freelance bas&eacute; en Alg&eacute;rie, je transforme vos rushes en contenu qui capte l&rsquo;attention et retient l&rsquo;audience.</p>
-      <p id="about-p2">Chaque projet est trait&eacute; avec pr&eacute;cision : de la structure narrative aux petits d&eacute;tails visuels qui font toute la diff&eacute;rence.</p>
+      <p class="eyebrow" id="lbl-about">À propos</p>
+      <h2 id="about-h2">Yasin Muhammad <em>Chikh</em></h2>
+      <p id="about-p1">Monteur vidéo et développeur web freelance basé en Algérie. Je transforme vos rushes en contenu qui capte l'attention, et vos idées en sites qui la convertissent.</p>
+      <p id="about-p2">Chaque projet est traité avec la même précision : structure narrative, rythme, détails visuels — et côté web, performance, accessibilité et référencement.</p>
       <div class="stats-row">
-        <div class="stat-item">
-          <div class="stat-num">3+</div>
-          <div class="stat-lbl" id="stat1">Ans d&rsquo;exp&eacute;rience</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">50+</div>
-          <div class="stat-lbl" id="stat2">Projets livr&eacute;s</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">100%</div>
-          <div class="stat-lbl" id="stat3">Clients satisfaits</div>
-        </div>
+        <div class="stat-item"><div class="stat-num">3+</div><div class="stat-lbl" id="stat1">ans d'expérience</div></div>
+        <div class="stat-item"><div class="stat-num">50+</div><div class="stat-lbl" id="stat2">projets livrés</div></div>
+        <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl" id="stat3">clients satisfaits</div></div>
       </div>
     </div>
     <div class="about-visual">
-        <img src="./img/profil.png" alt="Photo de profil">
+      <img src="./img/profil.png" alt="Yasin Muhammad Chikh" onerror="this.style.display='none'"/>
     </div>
   </div>
 </section>
- 
+
+<!-- ============ CONTACT ============ -->
 <section class="contact-section" id="contact">
   <div class="contact-inner">
     <div class="contact-left">
-      <p class="section-label" id="lbl-contact">Contact</p>
-      <h2 id="contact-h2">Parlons de<br/><span id="contact-h2-span">votre projet.</span></h2>
-      <p id="contact-desc">Disponible pour des projets freelance en montage vid&eacute;o, que ce soit ponctuellement ou sur le long terme.</p>
+      <p class="eyebrow" id="lbl-contact">Contact</p>
+      <h2 id="contact-h2">Parlons de <em>votre projet.</em></h2>
+      <p id="contact-desc">Disponible pour des missions de montage vidéo et de création de sites web, ponctuelles ou sur le long terme.</p>
     </div>
     <div class="contact-items">
       <a href="mailto:yas-motion@outlook.fr" class="contact-item">
-        <div class="contact-item-icon">&#9993;</div>
-        <div class="contact-item-info">
-          <div class="contact-item-label" id="lbl-email">Email</div>
-          <div class="contact-item-value">yas-motion@outlook.fr</div>
-        </div>
+        <div class="contact-item-icon">✉</div>
+        <div class="contact-item-info"><div class="contact-item-label" id="lbl-email">Email</div><div class="contact-item-value">yas-motion@outlook.fr</div></div>
       </a>
-      <a href="https://wa.me/213542927828" target="_blank" class="contact-item">
-        <div class="contact-item-icon">&#128172;</div>
-        <div class="contact-item-info">
-          <div class="contact-item-label">WhatsApp</div>
-          <div class="contact-item-value">+213 542 92 78 28</div>
-        </div>
+      <a href="https://wa.me/213542927828" target="_blank" rel="noopener" class="contact-item">
+        <div class="contact-item-icon">💬</div>
+        <div class="contact-item-info"><div class="contact-item-label">WhatsApp</div><div class="contact-item-value">+213 542 92 78 28</div></div>
       </a>
-      <div class="contact-item" style="cursor:default;">
-        <div class="contact-item-icon">&#128205;</div>
-        <div class="contact-item-info">
-          <div class="contact-item-label" id="lbl-loc">Localisation</div>
-          <div class="contact-item-value" id="loc-val">Alg&eacute;rie &mdash; Disponible &agrave; l&rsquo;international</div>
-        </div>
+      <div class="contact-item static">
+        <div class="contact-item-icon">📍</div>
+        <div class="contact-item-info"><div class="contact-item-label" id="lbl-loc">Localisation</div><div class="contact-item-value" id="loc-val">Algérie — disponible à l'international</div></div>
       </div>
     </div>
   </div>
 </section>
- 
+
+<!-- ============ FOOTER ============ -->
 <footer>
-  <div class="footer-logo">YAS<span>.</span>MOTION</div>
-  <span id="footer-copy">&copy; 2025 Yasin Muhammad CHIKH &middot; Tous droits r&eacute;serv&eacute;s</span>
-  <span>yas-motion@outlook.fr</span>
+  <a href="#top" class="brand footer-brand">
+    <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg>
+    <span class="brand-text"><strong>Yasin</strong><small id="brand-tag-2">montage x motion graphique</small></span>
+  </a>
+  <span id="footer-copy">© 2026 Yasin Muhammad Chikh · Tous droits réservés</span>
+  <a href="mailto:yas-motion@outlook.fr">yas-motion@outlook.fr</a>
 </footer>
- 
+
 <script>
+/* ---------- THÈME ---------- */
+function applyTheme(t){
+  document.documentElement.setAttribute('data-theme', t);
+  try { localStorage.setItem('yas-theme', t); } catch(e){}
+}
+function toggleTheme(){
+  var cur = document.documentElement.getAttribute('data-theme');
+  applyTheme(cur === 'dark' ? 'light' : 'dark');
+}
+(function(){
+  var saved = null;
+  try { saved = localStorage.getItem('yas-theme'); } catch(e){}
+  if (!saved) {
+    saved = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+  }
+  document.documentElement.setAttribute('data-theme', saved);
+})();
+
+/* ---------- MENU MOBILE ---------- */
+function toggleMenu(){
+  document.getElementById('nav').classList.toggle('open');
+}
+document.addEventListener('click', function(e){
+  var a = e.target.closest('#nav-links a');
+  if (a) document.getElementById('nav').classList.remove('open');
+});
+
+/* ---------- NAV AU SCROLL ---------- */
+window.addEventListener('scroll', function(){
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+}, {passive:true});
+
+/* ---------- APPARITION AU SCROLL ---------- */
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }});
+  }, {threshold: 0.12});
+  document.querySelectorAll('.reel-card,.site-card,.service-card,.testi-card,.section-head,.about-layout').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+})();
+
+/* ---------- TRADUCTIONS ---------- */
 var T = {
   fr: {
     dir: "ltr",
+    "skip-link": "Aller au contenu",
+    "brand-tag": "montage x motion graphique",
+    "brand-tag-2": "montage x motion graphique",
+    "nl-reels": "Reels", "nl-sites": "Sites web", "nl-services": "Services", "nl-about": "À propos",
     "nav-cta-text": "Me contacter",
-    "hero-eyebrow": "Video Editing Studio \u00b7 Alg\u00e9rie",
-    "hero-h1": "Vos vid\u00e9os,<br/><em>\u00e9lev\u00e9es<\/em> au<br/>niveau sup\u00e9rieur.",
-    "hero-sub": "Montage professionnel pour cr\u00e9ateurs de contenu, marques et entreprises. Du cut brut au rendu final soign\u00e9.",
-    "btn-start": "D\u00e9marrer un projet",
-    "btn-services": "Voir les services",
-    "photo-label": "Photo de profil",
+    "hero-eyebrow": "Monteur vidéo &amp; développeur web · Algérie",
+    "hero-h1": "Transformez,<br/>Captivez,<br/><em>Yassifiez.</em>",
+    "hero-sub": "Des formats verticaux qui retiennent l'attention jusqu'à la dernière seconde, et des sites web qui transforment cette attention en clients.",
+    "btn-start": "Démarrer un projet",
+    "btn-services": "Voir le portfolio",
+    "hs1": "projets livrés", "hs2": "vues générées", "hs3": "ans d'expérience",
+    "hero-badge-txt": "Disponible pour de nouveaux projets",
+    "lbl-reels": "Portfolio vidéo",
+    "reels-h2": "Formats verticaux <em>qui performent</em>",
+    "reels-sub": "Chaque montage est pensé pour la rétention : hook dans les 2 premières secondes, rythme serré, sous-titres lisibles. Voici les résultats.",
+    "lbl-sites": "Portfolio web",
+    "sites-h2": "Des sites <em>rapides, propres, trouvables</em>",
+    "sites-sub": "Conception, intégration et SEO technique. Des pages qui chargent vite, se positionnent et convertissent.",
+    "sc1": "Voir le site ↗", "sc2": "Voir le site ↗", "sc3": "Voir le site ↗", "sc4": "Voir le site ↗",
+    "ob1": "Offre Premium", "ob2": "Offre Signature", "ob3": "Offre Essentiel", "ob4": "Offre Essentiel",
+    "sd1": "Refonte complète, 8 pages, blog et optimisation Core Web Vitals.",
+    "sd2": "Plateforme roster, calendrier de matchs et boutique connectée.",
+    "sd3": "Catalogue de biens filtrable, visites vidéo intégrées, formulaire qualifié.",
+    "sd4": "Page de vente one-page, réservation de séance et tunnel d'abonnement.",
+    "seo1": "Score SEO", "seo2": "Score SEO", "seo3": "Score SEO", "seo4": "Score SEO",
+    "seon1": "Lighthouse · mobile", "seon2": "Lighthouse · mobile", "seon3": "Lighthouse · mobile", "seon4": "Lighthouse · mobile",
     "lbl-services": "Services",
-    "s1-title": "Montage YouTube &amp; R\u00e9seaux sociaux",
-    "s1-desc": "Cuts dynamiques, transitions fluides et rythme narratif adapt\u00e9 \u00e0 chaque plateforme \u2014 YouTube, Instagram Reels, TikTok.",
-    "s2-title": "Publicit\u00e9 &amp; Corporate",
-    "s2-desc": "Vid\u00e9os institutionnelles, spots publicitaires et pr\u00e9sentations d\u2019entreprise au rendu professionnel et percutant.",
-    "s3-title": "Sous-titrage &amp; Motion Graphics",
-    "s3-desc": "Sous-titres synchronis\u00e9s, animations typographiques et \u00e9l\u00e9ments graphiques qui donnent vie \u00e0 votre message.",
-    "lbl-clients": "Ils m\u2019ont fait confiance",
-    "t1-quote": "Yasin a livr\u00e9 un montage impeccable pour notre campagne. R\u00e9actif, professionnel et \u00e0 l\u2019\u00e9coute \u2014 exactement ce dont on avait besoin.",
-    "t2-quote": "Notre contenu esport n\u2019a jamais \u00e9t\u00e9 aussi dynamique. Yasin comprend parfaitement les codes visuels du gaming. On recommande \u00e0 100\u00a0%.",
-    "t3-quote": "Les vid\u00e9os de pr\u00e9sentation r\u00e9alis\u00e9es par Yasin ont nettement augment\u00e9 l\u2019engagement sur nos biens. Travail soign\u00e9 et livraison dans les d\u00e9lais.",
-    "lbl-about": "\u00c0 propos",
-    "about-h2": "Yasin Muhammad<br/><span>CHIKH<\/span>",
-    "about-p1": "\u00c9diteur vid\u00e9o freelance bas\u00e9 en Alg\u00e9rie, je transforme vos rushes en contenu qui capte l\u2019attention et retient l\u2019audience.",
-    "about-p2": "Chaque projet est trait\u00e9 avec pr\u00e9cision : de la structure narrative aux petits d\u00e9tails visuels qui font toute la diff\u00e9rence.",
-    "stat1": "Ans d\u2019exp\u00e9rience",
-    "stat2": "Projets livr\u00e9s",
-    "stat3": "Clients satisfaits",
-    "showreel-label": "Espace image \/ showreel",
+    "services-h2": "Ce que je peux <em>faire pour vous</em>",
+    "s1-title": "Montage vertical &amp; social",
+    "s1-desc": "Reels, TikTok et Shorts calibrés pour la rétention : hook, rythme, sous-titres animés, sound design.",
+    "s2-title": "Publicité &amp; corporate",
+    "s2-desc": "Spots publicitaires, films institutionnels et présentations d'entreprise au rendu premium.",
+    "s3-title": "Motion graphics",
+    "s3-desc": "Habillages, logos animés, typographies cinétiques et transitions sur mesure sous After Effects.",
+    "s4-title": "Création de sites web",
+    "s4-desc": "Sites vitrines, landing pages et portails sur mesure — rapides, responsives et optimisés SEO.",
+    "lbl-clients": "Ils m'ont fait confiance",
+    "clients-h2": "Retours <em>clients</em>",
+    "t1-quote": "Yasin a livré un montage impeccable pour notre campagne. Réactif, professionnel et à l'écoute — exactement ce dont on avait besoin.",
+    "t2-quote": "Notre contenu esport n'a jamais été aussi dynamique. Yasin comprend parfaitement les codes visuels du gaming. On recommande à 100 %.",
+    "t3-quote": "Les vidéos de présentation réalisées par Yasin ont nettement augmenté l'engagement sur nos biens. Travail soigné et livraison dans les délais.",
+    "lbl-about": "À propos",
+    "about-h2": "Yasin Muhammad <em>Chikh</em>",
+    "about-p1": "Monteur vidéo et développeur web freelance basé en Algérie. Je transforme vos rushes en contenu qui capte l'attention, et vos idées en sites qui la convertissent.",
+    "about-p2": "Chaque projet est traité avec la même précision : structure narrative, rythme, détails visuels — et côté web, performance, accessibilité et référencement.",
+    "stat1": "ans d'expérience", "stat2": "projets livrés", "stat3": "clients satisfaits",
     "lbl-contact": "Contact",
-    "contact-h2": "Parlons de<br\/><span id=\"contact-h2-span\">votre projet.<\/span>",
-    "contact-desc": "Disponible pour des projets freelance en montage vid\u00e9o, que ce soit ponctuellement ou sur le long terme.",
-    "lbl-email": "Email",
-    "lbl-loc": "Localisation",
-    "loc-val": "Alg\u00e9rie \u2014 Disponible \u00e0 l\u2019international",
-    "footer-copy": "\u00a9 2025 Yasin Muhammad CHIKH \u00b7 Tous droits r\u00e9serv\u00e9s"
+    "contact-h2": "Parlons de <em>votre projet.</em>",
+    "contact-desc": "Disponible pour des missions de montage vidéo et de création de sites web, ponctuelles ou sur le long terme.",
+    "lbl-email": "Email", "lbl-loc": "Localisation",
+    "loc-val": "Algérie — disponible à l'international",
+    "footer-copy": "© 2026 Yasin Muhammad Chikh · Tous droits réservés"
   },
   ar: {
     dir: "rtl",
-    "nav-cta-text": "\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\u064a",
-    "hero-eyebrow": "\u0627\u0633\u062a\u0648\u062f\u064a\u0648 \u0645\u0648\u0646\u062a\u0627\u062c \u0641\u064a\u062f\u064a\u0648 \u00b7 \u0627\u0644\u062c\u0632\u0627\u0626\u0631",
-    "hero-h1": "\u0641\u064a\u062f\u064a\u0648\u0647\u0627\u062a\u0643\u060c<br\/><em>\u0645\u0631\u0641\u0648\u0639\u0629<\/em> \u0625\u0644\u0649<br\/>\u0645\u0633\u062a\u0648\u0649 \u0623\u0639\u0644\u0649.",
-    "hero-sub": "\u0645\u0648\u0646\u062a\u0627\u062c \u0627\u062d\u062a\u0631\u0627\u0641\u064a \u0644\u0635\u0646\u0651\u0627\u0639 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0648\u0627\u0644\u0639\u0644\u0627\u0645\u0627\u062a \u0627\u0644\u062a\u062c\u0627\u0631\u064a\u0629 \u0648\u0627\u0644\u0634\u0631\u0643\u0627\u062a. \u0645\u0646 \u0627\u0644\u0645\u0627\u062f\u0629 \u0627\u0644\u062e\u0627\u0645 \u0625\u0644\u0649 \u0627\u0644\u0646\u062a\u064a\u062c\u0629 \u0627\u0644\u0646\u0647\u0627\u0626\u064a\u0629.",
-    "btn-start": "\u0627\u0628\u062f\u0623 \u0645\u0634\u0631\u0648\u0639\u0643",
-    "btn-services": "\u0627\u0644\u062e\u062f\u0645\u0627\u062a",
-    "photo-label": "\u0627\u0644\u0635\u0648\u0631\u0629 \u0627\u0644\u0634\u062e\u0635\u064a\u0629",
-    "lbl-services": "\u0627\u0644\u062e\u062f\u0645\u0627\u062a",
-    "s1-title": "\u0645\u0648\u0646\u062a\u0627\u062c \u064a\u0648\u062a\u064a\u0648\u0628 \u0648\u0645\u0646\u0635\u0627\u062a \u0627\u0644\u062a\u0648\u0627\u0635\u0644",
-    "s1-desc": "\u0642\u0637\u0648\u0639 \u062f\u064a\u0646\u0627\u0645\u064a\u0643\u064a\u0629 \u0648\u0627\u0646\u062a\u0642\u0627\u0644\u0627\u062a \u0633\u0644\u0633\u0629 \u0648\u0625\u064a\u0642\u0627\u0639 \u0633\u0631\u062f\u064a \u0645\u0646\u0627\u0633\u0628 \u0644\u0643\u0644 \u0645\u0646\u0635\u0629.",
-    "s2-title": "\u0625\u0639\u0644\u0627\u0646\u0627\u062a \u0648\u0641\u064a\u062f\u064a\u0648 \u0645\u0624\u0633\u0633\u064a",
-    "s2-desc": "\u0641\u064a\u062f\u064a\u0648\u0647\u0627\u062a \u0645\u0624\u0633\u0633\u064a\u0629 \u0648\u0625\u0639\u0644\u0627\u0646\u0627\u062a \u062a\u062c\u0627\u0631\u064a\u0629 \u0648\u0639\u0631\u0648\u0636 \u0634\u0631\u0643\u0627\u062a \u0628\u062c\u0648\u062f\u0629 \u0627\u062d\u062a\u0631\u0627\u0641\u064a\u0629.",
-    "s3-title": "\u062a\u0631\u062c\u0645\u0629 \u0648\u0631\u0633\u0648\u0645 \u0645\u062a\u062d\u0631\u0643\u0629",
-    "s3-desc": "\u062a\u0631\u062c\u0645\u0627\u062a \u0645\u062a\u0632\u0627\u0645\u0646\u0629 \u0648\u0631\u0633\u0648\u0645 \u0646\u0635\u064a\u0629 \u0645\u062a\u062d\u0631\u0643\u0629 \u0648\u0639\u0646\u0627\u0635\u0631 \u0628\u0635\u0631\u064a\u0629 \u062a\u064f\u062d\u064a\u064a \u0631\u0633\u0627\u0644\u062a\u0643.",
-    "lbl-clients": "\u0648\u062b\u0642\u0648\u0627 \u0628\u064a",
-    "t1-quote": "\u064a\u0627\u0633\u064a\u0646 \u0633\u0644\u0651\u0645 \u0645\u0648\u0646\u062a\u0627\u062c\u0627\u064b \u0645\u062a\u0642\u0646\u0627\u064b \u0644\u062d\u0645\u0644\u062a\u0646\u0627. \u0645\u062a\u062c\u0627\u0648\u0628 \u0648\u0645\u062d\u062a\u0631\u0641 \u0648\u0645\u0633\u062a\u0645\u0639 \u2014 \u0628\u0627\u0644\u0636\u0628\u0637 \u0645\u0627 \u0643\u0646\u0651\u0627 \u0646\u062d\u062a\u0627\u062c\u0647.",
-    "t2-quote": "\u0645\u062d\u062a\u0648\u0627\u0646\u0627 \u0641\u064a \u0627\u0644\u0625\u064a\u0633\u0628\u0648\u0631\u062a \u0644\u0645 \u064a\u0643\u0646 \u0628\u0647\u0630\u0627 \u0627\u0644\u062f\u064a\u0646\u0627\u0645\u064a\u0643\u064a\u0629 \u0645\u0646 \u0642\u0628\u0644. \u064a\u0627\u0633\u064a\u0646 \u064a\u0641\u0647\u0645 \u0628\u0639\u0645\u0642 \u0645\u062a\u0637\u0644\u0628\u0627\u062a \u0639\u0627\u0644\u0645 \u0627\u0644\u063a\u064a\u0645\u064a\u0646\u063a. \u062a\u0648\u0635\u064a\u0629 100\u066a.",
-    "t3-quote": "\u0641\u064a\u062f\u064a\u0648\u0647\u0627\u062a \u0627\u0644\u0639\u0631\u0636 \u0627\u0644\u062a\u064a \u0623\u0646\u062c\u0632\u0647\u0627 \u064a\u0627\u0633\u064a\u0646 \u0631\u0641\u0639\u062a \u0628\u0634\u0643\u0644 \u0645\u0644\u062d\u0648\u0638 \u062a\u0641\u0627\u0639\u0644 \u0639\u0645\u0644\u0627\u0626\u0646\u0627. \u0639\u0645\u0644 \u0645\u062a\u0642\u0646 \u0648\u062a\u0633\u0644\u064a\u0645 \u0641\u064a \u0627\u0644\u0648\u0642\u062a.",
-    "lbl-about": "\u0646\u0628\u0630\u0629 \u0639\u0646\u064a",
-    "about-h2": "Yasin Muhammad<br\/><span>CHIKH<\/span>",
-    "about-p1": "\u0645\u0648\u0646\u062a\u064a\u0631 \u0641\u064a\u062f\u064a\u0648 \u0645\u0633\u062a\u0642\u0644 \u0645\u0642\u064a\u0645 \u0641\u064a \u0627\u0644\u062c\u0632\u0627\u0626\u0631\u060c \u0623\u062d\u0648\u0651\u0644 \u0644\u0642\u0637\u0627\u062a\u0643 \u0627\u0644\u062e\u0627\u0645 \u0625\u0644\u0649 \u0645\u062d\u062a\u0648\u0649 \u064a\u0634\u062f\u0651 \u0627\u0644\u0627\u0646\u062a\u0628\u0627\u0647.",
-    "about-p2": "\u0643\u0644 \u0645\u0634\u0631\u0648\u0639 \u064a\u064f\u0639\u0627\u0644\u064e\u062c \u0628\u062f\u0642\u0629 : \u0645\u0646 \u0627\u0644\u0628\u0646\u064a\u0629 \u0627\u0644\u0633\u0631\u062f\u064a\u0629 \u0625\u0644\u0649 \u0623\u062f\u0642 \u0627\u0644\u062a\u0641\u0627\u0635\u064a\u0644 \u0627\u0644\u0628\u0635\u0631\u064a\u0629.",
-    "stat1": "\u0633\u0646\u0648\u0627\u062a \u062e\u0628\u0631\u0629",
-    "stat2": "\u0645\u0634\u0631\u0648\u0639 \u0645\u064f\u0646\u062c\u0632",
-    "stat3": "\u0639\u0645\u0644\u0627\u0621 \u0631\u0627\u0636\u0648\u0646",
-    "showreel-label": "\u0645\u0633\u0627\u062d\u0629 \u0627\u0644\u0635\u0648\u0631\u0629 \/ \u0639\u0631\u0636 \u0627\u0644\u0623\u0639\u0645\u0627\u0644",
-    "lbl-contact": "\u062a\u0648\u0627\u0635\u0644",
-    "contact-h2": "\u0644\u0646\u062a\u062d\u062f\u062b \u0639\u0646<br\/><span id=\"contact-h2-span\">\u0645\u0634\u0631\u0648\u0639\u0643.<\/span>",
-    "contact-desc": "\u0645\u062a\u0627\u062d \u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0645\u0648\u0646\u062a\u0627\u062c \u0641\u064a\u062f\u064a\u0648 \u0633\u0648\u0627\u0621 \u0644\u0645\u0631\u0629 \u0648\u0627\u062d\u062f\u0629 \u0623\u0648 \u0639\u0644\u0649 \u0627\u0644\u0645\u062f\u0649 \u0627\u0644\u0628\u0639\u064a\u062f.",
-    "lbl-email": "\u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a",
-    "lbl-loc": "\u0627\u0644\u0645\u0648\u0642\u0639",
-    "loc-val": "\u0627\u0644\u062c\u0632\u0627\u0626\u0631 \u2014 \u0645\u062a\u0627\u062d \u062f\u0648\u0644\u064a\u064b\u0627",
-    "footer-copy": "\u00a9 2025 Yasin Muhammad CHIKH \u00b7 \u062c\u0645\u064a\u0639 \u0627\u0644\u062d\u0642\u0648\u0642 \u0645\u062d\u0641\u0648\u0638\u0629"
+    "skip-link": "انتقل إلى المحتوى",
+    "brand-tag": "مونتاج × موشن غرافيك",
+    "brand-tag-2": "مونتاج × موشن غرافيك",
+    "nl-reels": "الريلز", "nl-sites": "المواقع", "nl-services": "الخدمات", "nl-about": "نبذة عني",
+    "nav-cta-text": "تواصل معي",
+    "hero-eyebrow": "مونتير فيديو ومطوّر ويب · الجزائر",
+    "hero-h1": "حوِّل،<br/>اجذب،<br/><em>ياسِّف.</em>",
+    "hero-sub": "فيديوهات عمودية تحافظ على انتباه المشاهد حتى الثانية الأخيرة، ومواقع ويب تحوّل هذا الانتباه إلى عملاء.",
+    "btn-start": "ابدأ مشروعك",
+    "btn-services": "شاهد الأعمال",
+    "hs1": "مشروع مُنجز", "hs2": "مشاهدة", "hs3": "سنوات خبرة",
+    "hero-badge-txt": "متاح لمشاريع جديدة",
+    "lbl-reels": "أعمال الفيديو",
+    "reels-h2": "فيديوهات عمودية <em>تُحقّق النتائج</em>",
+    "reels-sub": "كل مونتاج مصمَّم للاحتفاظ بالمشاهد: جذب في أول ثانيتين، إيقاع سريع، ترجمة واضحة. وهذه هي النتائج.",
+    "lbl-sites": "أعمال الويب",
+    "sites-h2": "مواقع <em>سريعة ونظيفة وقابلة للأرشفة</em>",
+    "sites-sub": "تصميم وبرمجة وتحسين تقني لمحركات البحث. صفحات تُحمَّل بسرعة وتتصدّر وتُحوِّل.",
+    "sc1": "زيارة الموقع ↗", "sc2": "زيارة الموقع ↗", "sc3": "زيارة الموقع ↗", "sc4": "زيارة الموقع ↗",
+    "ob1": "باقة بريميوم", "ob2": "باقة سيغنتشر", "ob3": "الباقة الأساسية", "ob4": "الباقة الأساسية",
+    "sd1": "إعادة تصميم كاملة، 8 صفحات، مدوّنة وتحسين مؤشرات الأداء.",
+    "sd2": "منصة للفريق، جدول المباريات ومتجر مدمج.",
+    "sd3": "كتالوغ عقارات بفلاتر، جولات فيديو ونموذج تواصل مؤهَّل.",
+    "sd4": "صفحة بيع واحدة، حجز الحصص ومسار اشتراك كامل.",
+    "seo1": "تقييم السيو", "seo2": "تقييم السيو", "seo3": "تقييم السيو", "seo4": "تقييم السيو",
+    "seon1": "Lighthouse · موبايل", "seon2": "Lighthouse · موبايل", "seon3": "Lighthouse · موبايل", "seon4": "Lighthouse · موبايل",
+    "lbl-services": "الخدمات",
+    "services-h2": "ما <em>يمكنني تقديمه لك</em>",
+    "s1-title": "مونتاج عمودي ومنصات التواصل",
+    "s1-desc": "ريلز وتيك توك وشورتس مُعدّة للاحتفاظ بالمشاهد: جذب، إيقاع، ترجمة متحركة وهندسة صوت.",
+    "s2-title": "إعلانات وفيديو مؤسسي",
+    "s2-desc": "إعلانات تجارية وأفلام مؤسسية وعروض شركات بجودة احترافية.",
+    "s3-title": "موشن غرافيك",
+    "s3-desc": "هويات متحركة، شعارات، نصوص حركية وانتقالات مخصّصة على After Effects.",
+    "s4-title": "تصميم مواقع الويب",
+    "s4-desc": "مواقع تعريفية وصفحات هبوط ومنصات مخصّصة — سريعة ومتجاوبة ومُحسَّنة للسيو.",
+    "lbl-clients": "وثقوا بي",
+    "clients-h2": "آراء <em>العملاء</em>",
+    "t1-quote": "ياسين سلّم مونتاجاً متقناً لحملتنا. متجاوب ومحترف ومستمع — بالضبط ما كنّا نحتاجه.",
+    "t2-quote": "محتوانا في الإيسبورت لم يكن بهذه الديناميكية من قبل. ياسين يفهم بعمق متطلبات عالم الغيمينغ. توصية 100٪.",
+    "t3-quote": "فيديوهات العرض التي أنجزها ياسين رفعت بشكل ملحوظ تفاعل عملائنا. عمل متقن وتسليم في الوقت.",
+    "lbl-about": "نبذة عني",
+    "about-h2": "ياسين محمد <em>شيخ</em>",
+    "about-p1": "مونتير فيديو ومطوّر ويب مستقل مقيم في الجزائر. أحوّل لقطاتك الخام إلى محتوى يشدّ الانتباه، وأفكارك إلى مواقع تحوّله إلى نتائج.",
+    "about-p2": "كل مشروع يُعالَج بالدقة نفسها: البنية السردية والإيقاع والتفاصيل البصرية — وفي الويب: الأداء وسهولة الوصول والأرشفة.",
+    "stat1": "سنوات خبرة", "stat2": "مشروع مُنجز", "stat3": "عملاء راضون",
+    "lbl-contact": "تواصل",
+    "contact-h2": "لنتحدث عن <em>مشروعك.</em>",
+    "contact-desc": "متاح لمهام مونتاج الفيديو وتصميم المواقع، سواء لمرة واحدة أو على المدى الطويل.",
+    "lbl-email": "البريد الإلكتروني", "lbl-loc": "الموقع",
+    "loc-val": "الجزائر — متاح دولياً",
+    "footer-copy": "© 2026 ياسين محمد شيخ · جميع الحقوق محفوظة"
   }
 };
- 
-function setLang(lang) {
-  var t = T[lang];
-  var html = document.documentElement;
-  html.setAttribute("lang", lang);
-  html.setAttribute("dir", t.dir);
-  document.getElementById("btn-fr").classList.toggle("active", lang === "fr");
-  document.getElementById("btn-ar").classList.toggle("active", lang === "ar");
-  var keys = Object.keys(t);
-  for (var i = 0; i < keys.length; i++) {
-    var id = keys[i];
-    if (id === "dir") continue;
+
+/* Petits libellés d'unités, partagés par toutes les cartes de performance */
+var U = {
+  fr: {"vues":"vues","retention":"rétention","engagement":"engagement","abonnes":"abonnés",
+       "visites-gen":"visites générées","gain-temps":"gain / mois","ca":"CA généré","roas":"ROAS",
+       "visites-sem":"visites/sem.","ctr":"taux de clic","impressions":"impressions/mois"},
+  ar: {"vues":"مشاهدة","retention":"نسبة الاحتفاظ","engagement":"تفاعل","abonnes":"متابع جديد",
+       "visites-gen":"زيارة مُولَّدة","gain-temps":"ربح / شهر","ca":"مبيعات","roas":"العائد الإعلاني",
+       "visites-sem":"زيارة/أسبوع","ctr":"نسبة النقر","impressions":"ظهور/شهر"}
+};
+
+function setLang(lang){
+  var t = T[lang], html = document.documentElement;
+  html.setAttribute('lang', lang);
+  html.setAttribute('dir', t.dir);
+  document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+  document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+  Object.keys(t).forEach(function(id){
+    if (id === 'dir') return;
     var el = document.getElementById(id);
     if (el) el.innerHTML = t[id];
-  }
+  });
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var v = U[lang][el.getAttribute('data-i18n')];
+    if (v) el.textContent = v;
+  });
+  try { localStorage.setItem('yas-lang', lang); } catch(e){}
 }
+(function(){
+  var l = null;
+  try { l = localStorage.getItem('yas-lang'); } catch(e){}
+  if (l === 'ar') setLang('ar');
+})();
 </script>
 </body>
 </html>
