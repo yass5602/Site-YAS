@@ -4,11 +4,22 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Yasin — Montage x Motion Graphique</title>
-<meta name="description" content="Monteur vidéo & développeur web. Montage vertical qui retient l'attention, sites web qui convertissent. Basé en Algérie, disponible à l'international."/>
+<meta name="description" content="Monteur vidéo & développeur web. Montage vertical qui retient l'attention, sites web qui convertissent. Disponible à distance, en France et à l'international."/>
+<link rel="stylesheet" href="./style.css">
+
+<!-- Image du hero (élément LCP) : découverte et téléchargée en priorité -->
+<link rel="preload" as="image" href="./img/profil.webp" fetchpriority="high">
+
+<!-- Google Fonts chargé SANS bloquer le rendu : le texte s'affiche tout de
+     suite avec la police système, puis bascule sur Plus Jakarta Sans.
+     media="print" empêche le navigateur de retarder le premier affichage. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap"/>
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap"/>
+</noscript>
 </head>
 <body>
 
@@ -31,7 +42,7 @@
   </defs>
 </svg>
 
-<a href="#reels" class="skip-link" id="skip-link">Aller au contenu</a>
+<a href="#contenu" class="skip-link" id="skip-link">Aller au contenu</a>
 
 <!-- ============ NAV ============ -->
 <nav id="nav">
@@ -71,7 +82,7 @@
 
   <div class="hero-grid">
     <div class="hero-content">
-      <p class="eyebrow" id="hero-eyebrow">Monteur vidéo &amp; développeur web · Algérie</p>
+      <p class="eyebrow" id="hero-eyebrow">Monteur vidéo &amp; développeur web · France</p>
       <h1 id="hero-h1">Transformez,<br/>Captivez,<br/><em>Yassifiez.</em></h1>
       <p class="lead" id="hero-sub">Des formats verticaux qui retiennent l'attention jusqu'à la dernière seconde, et des sites web qui transforment cette attention en clients.</p>
       <div class="hero-actions">
@@ -87,7 +98,9 @@
 
     <div class="hero-visual">
       <div class="photo-frame">
-        <img src="./img/profil.png" alt="Yasin M. Chikh" onerror="this.style.display='none'"/>
+        <img src="./img/profil.webp" alt="Yasin M. Chikh" width="442" height="512"
+             fetchpriority="high" decoding="async"
+             onerror="this.onerror=null;this.src='./img/profil.png'"/>
         <svg class="float-mark" aria-hidden="true"><use href="#mark"/></svg>
       </div>
       <div class="hero-badge">
@@ -106,6 +119,8 @@
 </header>
 
 
+<main id="contenu">
+
 <!-- ============ TÉMOIGNAGES ============ -->
 <section class="section" id="clients">
   <div class="section-head">
@@ -115,21 +130,21 @@
   <div class="testimonials-grid">
     <div class="testi-card">
       <div class="testi-header">
-        <div class="testi-logo"><img src="https://framerusercontent.com/images/OC2t6gzzIMzWwfBS0He3KzH5xs.png?width=225&height=225" alt="Sodebo"></div>
+        <div class="testi-logo"><img src="https://framerusercontent.com/images/OC2t6gzzIMzWwfBS0He3KzH5xs.png?width=225&height=225" alt="Sodebo" width="42" height="42" loading="lazy" decoding="async"></div>
         <div class="testi-meta"><div class="testi-name">Sodebo</div><div class="testi-stars">★★★★★</div></div>
       </div>
       <p class="testi-quote" id="t1-quote">Yasin a livré un montage impeccable pour notre campagne. Réactif, professionnel et à l'écoute — exactement ce dont on avait besoin.</p>
     </div>
     <div class="testi-card">
       <div class="testi-header">
-        <div class="testi-logo"><img src="https://framerusercontent.com/images/2ZVyTkkxSkXGszoZWiAnmbCpssw.jpg?width=900&height=900" alt="Gameward"></div>
+        <div class="testi-logo"><img src="https://framerusercontent.com/images/2ZVyTkkxSkXGszoZWiAnmbCpssw.jpg?width=900&height=900" alt="Gameward" width="42" height="42" loading="lazy" decoding="async"></div>
         <div class="testi-meta"><div class="testi-name">Gameward</div><div class="testi-stars">★★★★★</div></div>
       </div>
       <p class="testi-quote" id="t2-quote">Notre contenu esport n'a jamais été aussi dynamique. Yasin comprend parfaitement les codes visuels du gaming. On recommande à 100 %.</p>
     </div>
     <div class="testi-card">
       <div class="testi-header">
-        <div class="testi-logo"><img src="https://framerusercontent.com/images/rpNCEIvqPLEzVYVBL9D5XKDpsfE.png?width=225&height=225" alt="DMB Immobilier"></div>
+        <div class="testi-logo"><img src="https://framerusercontent.com/images/rpNCEIvqPLEzVYVBL9D5XKDpsfE.png?width=225&height=225" alt="DMB Immobilier" width="42" height="42" loading="lazy" decoding="async"></div>
         <div class="testi-meta"><div class="testi-name">DMB Immobilier</div><div class="testi-stars">★★★★★</div></div>
       </div>
       <p class="testi-quote" id="t3-quote">Les vidéos de présentation réalisées par Yasin ont nettement augmenté l'engagement sur nos biens. Travail soigné et livraison dans les délais.</p>
@@ -264,9 +279,10 @@
      POUR CHAQUE CARTE :
      · href="…"             → l'URL réelle du site
      · <em>domaine.com</em> → le domaine affiché dans la barre du navigateur
-     · --shot:url('…')      → dépose une capture d'écran dans ./img/sites/
-                              et elle remplacera automatiquement l'aperçu
-                              dessiné en CSS (recommandé : 1280x800, format .jpg)
+     · Capture d'écran réelle : dépose le .jpg dans ./img/sites/ PUIS ajoute
+       sur la balise <a> l'attribut  style="--shot:url('./img/sites/mon-site.jpg')"
+       Elle remplacera l'aperçu dessiné en CSS. (Recommandé : 1280x800.)
+       Tant que l'attribut n'est pas là, aucune requête n'est faite.
      · data-mock            → l'aperçu CSS de secours (idiril | avocat | henna | obsidian)
      · .offer-badge         → classes : essentiel | premium | signature
      · --score:96           → remplit l'anneau SEO (change aussi le <b> juste dessous)
@@ -284,7 +300,7 @@
     <!-- Site 1 — Idiril Media -->
     <article class="site-card">
       <a class="site-shot" href="https://www.idiril-media.com/" target="_blank" rel="noopener"
-         data-mock="idiril" style="--shot:url('./img/sites/idiril-media.jpg')">
+         data-mock="idiril">
         <span class="chrome"><i></i><i></i><i></i><em>idiril-media.com</em></span>
         <span class="mock">
           <span class="mock-nav"><b></b><u></u><u></u><u></u><s></s></span>
@@ -326,7 +342,7 @@
     <!-- Site 2 — LM Avocat -->
     <article class="site-card">
       <a class="site-shot" href="https://www.medjber-avocat.fr/" target="_blank" rel="noopener"
-         data-mock="avocat" style="--shot:url('./img/sites/medjber-avocat.jpg')">
+         data-mock="avocat">
         <span class="chrome"><i></i><i></i><i></i><em>medjber-avocat.fr</em></span>
         <span class="mock">
           <span class="mock-nav"><b></b><u></u><u></u><u></u><s></s></span>
@@ -367,7 +383,7 @@
     <!-- Site 3 — Henna by Inès -->
     <article class="site-card">
       <a class="site-shot" href="https://henna-by-ines.vercel.app/" target="_blank" rel="noopener"
-         data-mock="henna" style="--shot:url('./img/sites/henna-by-ines.jpg')">
+         data-mock="henna">
         <span class="chrome"><i></i><i></i><i></i><em>henna-by-ines.vercel.app</em></span>
         <span class="mock">
           <span class="mock-nav"><b></b><u></u><u></u><u></u><s></s></span>
@@ -408,7 +424,7 @@
     <!-- Site 4 — Obsidian Agency -->
     <article class="site-card">
       <a class="site-shot" href="https://www.obsidian-agency.fr/" target="_blank" rel="noopener"
-         data-mock="obsidian" style="--shot:url('./img/sites/obsidian-agency.jpg')">
+         data-mock="obsidian">
         <span class="chrome"><i></i><i></i><i></i><em>obsidian-agency.fr</em></span>
         <span class="mock">
           <span class="mock-nav"><b></b><u></u><u></u><u></u><s></s></span>
@@ -495,7 +511,9 @@
       </div>
     </div>
     <div class="about-visual">
-      <img src="./img/profil.png" alt="Yasin M. Chikh" onerror="this.style.display='none'"/>
+      <img src="./img/profil.webp" alt="Yasin M. Chikh" width="442" height="512"
+           loading="lazy" decoding="async"
+           onerror="this.onerror=null;this.src='./img/profil.png'"/>
     </div>
   </div>
 </section>
@@ -519,11 +537,13 @@
       </a>
       <div class="contact-item static">
         <div class="contact-item-icon">📍</div>
-        <div class="contact-item-info"><div class="contact-item-label" id="lbl-loc">Localisation</div><div class="contact-item-value" id="loc-val">Algérie — disponible à l'international</div></div>
+        <div class="contact-item-info"><div class="contact-item-label" id="lbl-loc">Zone d'intervention</div><div class="contact-item-value" id="loc-val">À distance — France &amp; international</div></div>
       </div>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ============ FOOTER ============ -->
 <footer>
@@ -634,7 +654,7 @@ var T = {
     "nl-clients": "Clients", "nl-reels": "Reels", "nl-sites": "Sites web", "nl-services": "Services", "nl-about": "À propos",
     "rn1": "Instagram", "rn2": "TikTok", "rn3": "Instagram", "rm-open": "Ouvrir",
     "nav-cta-text": "Me contacter",
-    "hero-eyebrow": "Monteur vidéo développeur web · France",
+    "hero-eyebrow": "Monteur vidéo &amp; développeur web · France",
     "hero-h1": "Transformez,<br/>Captivez,<br/><em>Yassifiez.</em>",
     "hero-sub": "Des formats verticaux qui retiennent l'attention jusqu'à la dernière seconde, et des sites web qui transforment cette attention en clients.",
     "btn-start": "Démarrer un projet",
@@ -672,14 +692,14 @@ var T = {
     "t3-quote": "Les vidéos de présentation réalisées par Yasin ont nettement augmenté l'engagement sur nos biens. Travail soigné et livraison dans les délais.",
     "lbl-about": "À propos",
     "about-h2": "Yasin M. <em>Chikh</em>",
-    "about-p1": "Monteur vidéo et développeur web freelance basé en Algérie. Je transforme vos rushes en contenu qui capte l'attention, et vos idées en sites qui la convertissent.",
+    "about-p1": "Monteur vidéo et développeur web freelance. Je transforme vos rushes en contenu qui capte l'attention, et vos idées en sites qui la convertissent.",
     "about-p2": "Chaque projet est traité avec la même précision : structure narrative, rythme, détails visuels — et côté web, performance, accessibilité et référencement.",
     "stat1": "ans d'expérience", "stat2": "projets livrés", "stat3": "clients satisfaits",
     "lbl-contact": "Contact",
     "contact-h2": "Parlons de <em>votre projet.</em>",
     "contact-desc": "Disponible pour des missions de montage vidéo et de création de sites web, ponctuelles ou sur le long terme.",
-    "lbl-email": "Email", "lbl-loc": "Localisation",
-    "loc-val": "Algérie — disponible à l'international",
+    "lbl-email": "Email", "lbl-loc": "Zone d'intervention",
+    "loc-val": "À distance — France &amp; international",
     "footer-copy": "© 2026 Yasin M. Chikh · Tous droits réservés"
   },
   ar: {
@@ -690,7 +710,7 @@ var T = {
     "nl-clients": "العملاء", "nl-reels": "الريلز", "nl-sites": "المواقع", "nl-services": "الخدمات", "nl-about": "نبذة عني",
     "rn1": "إنستغرام", "rn2": "تيك توك", "rn3": "إنستغرام", "rm-open": "فتح",
     "nav-cta-text": "تواصل معي",
-    "hero-eyebrow": "مونتير فيديو ومطوّر ويب · الجزائر",
+    "hero-eyebrow": "مونتير فيديو ومطوّر ويب · مستقل",
     "hero-h1": "حوِّل،<br/>اجذب،<br/><em>ياسِّف.</em>",
     "hero-sub": "فيديوهات عمودية تحافظ على انتباه المشاهد حتى الثانية الأخيرة، ومواقع ويب تحوّل هذا الانتباه إلى عملاء.",
     "btn-start": "ابدأ مشروعك",
@@ -728,14 +748,14 @@ var T = {
     "t3-quote": "فيديوهات العرض التي أنجزها ياسين رفعت بشكل ملحوظ تفاعل عملائنا. عمل متقن وتسليم في الوقت.",
     "lbl-about": "نبذة عني",
     "about-h2": "ياسين محمد <em>شيخ</em>",
-    "about-p1": "مونتير فيديو ومطوّر ويب مستقل مقيم في الجزائر. أحوّل لقطاتك الخام إلى محتوى يشدّ الانتباه، وأفكارك إلى مواقع تحوّله إلى نتائج.",
+    "about-p1": "مونتير فيديو ومطوّر ويب مستقل. أحوّل لقطاتك الخام إلى محتوى يشدّ الانتباه، وأفكارك إلى مواقع تحوّله إلى نتائج.",
     "about-p2": "كل مشروع يُعالَج بالدقة نفسها: البنية السردية والإيقاع والتفاصيل البصرية — وفي الويب: الأداء وسهولة الوصول والأرشفة.",
     "stat1": "سنوات خبرة", "stat2": "مشروع مُنجز", "stat3": "عملاء راضون",
     "lbl-contact": "تواصل",
     "contact-h2": "لنتحدث عن <em>مشروعك.</em>",
     "contact-desc": "متاح لمهام مونتاج الفيديو وتصميم المواقع، سواء لمرة واحدة أو على المدى الطويل.",
-    "lbl-email": "البريد الإلكتروني", "lbl-loc": "الموقع",
-    "loc-val": "الجزائر — متاح دولياً",
+    "lbl-email": "البريد الإلكتروني", "lbl-loc": "نطاق العمل",
+    "loc-val": "عن بُعد — فرنسا ودولياً",
     "footer-copy": "© 2026 ياسين محمد شيخ · جميع الحقوق محفوظة"
   }
 };

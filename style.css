@@ -3,15 +3,18 @@
    Feuille de style principale
    ========================================================= */
 
-/* --- Typo de marque : Open Sauce (optionnel) ---------------
-   Dépose OpenSauceOne-Regular.woff2 / -SemiBold / -Bold / -ExtraBold
-   dans ./fonts/ et la typo du kit prendra automatiquement le relais.
-   Sinon, Plus Jakarta Sans (Google Fonts) sert de remplaçante. */
+/* --- Typo de marque : Open Sauce (optionnel, désactivé) -----------------
+   Les fichiers n'existent pas sur le serveur : les @font-face renvoyaient
+   5 erreurs 404 et retardaient l'affichage du texte. Pour réactiver la typo
+   du kit, dépose les .woff2 dans ./fonts/ puis décommente ce bloc.
+
 @font-face{font-family:'Open Sauce One';src:url('./fonts/OpenSauceOne-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'Open Sauce One';src:url('./fonts/OpenSauceOne-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
 @font-face{font-family:'Open Sauce One';src:url('./fonts/OpenSauceOne-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
 @font-face{font-family:'Open Sauce One';src:url('./fonts/OpenSauceOne-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
 @font-face{font-family:'Open Sauce One';src:url('./fonts/OpenSauceOne-ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+
+   ... et remets 'Open Sauce One' en tête des deux piles ci-dessous. */
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -38,8 +41,8 @@
   --ease: cubic-bezier(.22,.8,.3,1);
 
   /* Typo */
-  --font-display:'Open Sauce One','Plus Jakarta Sans','Segoe UI',system-ui,sans-serif;
-  --font-body:'Open Sauce One','Plus Jakarta Sans','Segoe UI',system-ui,sans-serif;
+  --font-display:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
 }
 
 /* --- Thème sombre (défaut) --- */
@@ -215,6 +218,13 @@ nav.open .burger span:nth-child(3){transform:translateY(-5.8px) rotate(-45deg)}
 :root[data-theme="light"] .aurora i{opacity:.3}
 @keyframes drift{to{transform:translate3d(6%, -5%, 0) scale(1.15)}}
 
+/* Sur petit écran, les halos restent mais ne s'animent plus et le flou est
+   divisé par deux : même ambiance, une fraction du coût de peinture. */
+@media (max-width:860px){
+  .aurora i{animation:none;filter:blur(45px);opacity:.42}
+  :root[data-theme="light"] .aurora i{opacity:.24}
+}
+
 .hero-grid{
   position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;
   display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;
@@ -268,8 +278,14 @@ nav.open .burger span:nth-child(3){transform:translateY(-5.8px) rotate(-45deg)}
   box-shadow:var(--shadow);color:var(--text)
 }
 :root[data-theme="dark"] .hero-badge{background:rgba(255,255,255,.07)}
-.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:#1BD98A;box-shadow:0 0 0 3px rgba(27,217,138,.22);animation:pulse 2s infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(27,217,138,0)}}
+.hero-badge .dot{
+  position:relative;width:7px;height:7px;border-radius:50%;background:#1BD98A;flex-shrink:0
+}
+.hero-badge .dot::after{
+  content:'';position:absolute;inset:-3px;border-radius:50%;
+  background:rgba(27,217,138,.3);animation:pulse 2s infinite;will-change:transform,opacity
+}
+@keyframes pulse{to{transform:scale(2.6);opacity:0}}
 
 /* Bandeau défilant */
 .marquee{
@@ -299,6 +315,14 @@ nav.open .burger span:nth-child(3){transform:translateY(-5.8px) rotate(-45deg)}
 }
 .section-sub{margin-top:1rem;color:var(--muted);max-width:42rem;font-size:.98rem}
 
+/* Le rendu des sections sous la ligne de flottaison est différé jusqu'à
+   ce qu'elles approchent de l'écran : moins de travail au chargement.
+   contain-intrinsic-size réserve leur hauteur pour ne pas créer de décalage. */
+#sites,#services,#clients,#about{
+  content-visibility:auto;
+  contain-intrinsic-size:auto 900px
+}
+
 /* Révélation au scroll */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .reveal.in{opacity:1;transform:none}
@@ -320,6 +344,7 @@ nav.open .burger span:nth-child(3){transform:translateY(-5.8px) rotate(-45deg)}
 .reel-media{
   position:relative;aspect-ratio:9/16;border-radius:var(--r-lg);overflow:hidden;
   border:1px solid var(--border);box-shadow:var(--shadow);
+  content-visibility:auto;contain-intrinsic-size:auto 560px;
   transition:transform .45s var(--ease),box-shadow .45s var(--ease)
 }
 .reel-card:hover .reel-media{transform:translateY(-8px);box-shadow:var(--glow)}
@@ -510,7 +535,7 @@ html[dir="rtl"] .perf-foot{text-align:right}
 /* Capture réelle : renseigne --shot sur l'élément (voir le HTML). */
 .site-shot .shot-inner{
   position:absolute;inset:26px 0 0 0;
-  background-image:var(--shot);background-size:cover;background-position:top center;
+  background-image:var(--shot,none);background-size:cover;background-position:top center;
   background-color:transparent;
   transition:transform .6s var(--ease)
 }
