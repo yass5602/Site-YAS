@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="./style.css">
 
 <!-- Image du hero (élément LCP) : découverte et téléchargée en priorité -->
-<link rel="preload" as="image" href="./img/profil.webp" fetchpriority="high">
+<link rel="preload" as="image" href="./img/reels/smala.jpg" fetchpriority="high">
 
 <!-- Google Fonts chargé SANS bloquer le rendu : le texte s'affiche tout de
      suite avec la police système, puis bascule sur Plus Jakarta Sans.
@@ -98,22 +98,20 @@
 
     <div class="hero-visual">
       <div class="photo-frame">
-        <img src="./img/profil.webp" alt="Yasin M. Chikh" width="442" height="512"
-             fetchpriority="high" decoding="async"
-             onerror="this.onerror=null;this.src='./img/profil.png'"/>
-        <svg class="float-mark" aria-hidden="true"><use href="#mark"/></svg>
+        <img src="./img/reels/smala.jpg" alt="Reel monté pour Smala Média" width="360" height="640"
+             fetchpriority="high" decoding="async"/>
+        <p class="hero-caption"><b id="hero-cap-n">32 615</b><span id="hero-cap-t">vues · Smala Média</span></p>
       </div>
-      <div class="hero-badge">
+      <p class="hero-badge">
         <span class="dot"></span>
         <span id="hero-badge-txt">Disponible pour de nouveaux projets</span>
-      </div>
+      </p>
     </div>
   </div>
 
-  <div class="marquee" aria-hidden="true">
+  <div class="marquee">
     <div class="marquee-track">
-      <span>Premiere Pro</span><i>✦</i><span>After Effects</span><i>✦</i><span>DaVinci Resolve</span><i>✦</i><span>Motion Design</span><i>✦</i><span>Sound Design</span><i>✦</i><span>Webflow</span><i>✦</i><span>React</span><i>✦</i><span>SEO</span><i>✦</i>
-      <span>Premiere Pro</span><i>✦</i><span>After Effects</span><i>✦</i><span>DaVinci Resolve</span><i>✦</i><span>Motion Design</span><i>✦</i><span>Sound Design</span><i>✦</i><span>Webflow</span><i>✦</i><span>React</span><i>✦</i><span>SEO</span><i>✦</i>
+      <span>Premiere Pro</span><span>After Effects</span><span>DaVinci Resolve</span><span>Motion design</span><span>Sound design</span><span>Webflow</span><span>React</span><span>SEO</span>
     </div>
   </div>
 </header>
@@ -280,7 +278,7 @@
      · href="…"             → l'URL réelle du site
      · <em>domaine.com</em> → le domaine affiché dans la barre du navigateur
      · Capture d'écran réelle : dépose le .jpg dans ./img/sites/ PUIS ajoute
-       sur la balise <a> l'attribut  style="--shot:url('./img/sites/mon-site.jpg')"
+       sur la balise <a> l'attribut
        Elle remplacera l'aperçu dessiné en CSS. (Recommandé : 1280x800.)
        Tant que l'attribut n'est pas là, aucune requête n'est faite.
      · data-mock            → l'aperçu CSS de secours (idiril | avocat | henna | obsidian)
@@ -469,7 +467,7 @@
 <section class="section alt" id="services">
   <div class="section-head">
     <p class="eyebrow" id="lbl-services">Services</p>
-    <h2 id="services-h2">Ce que je peux <em>faire pour vous</em></h2>
+    <h2 id="services-h2">Montage, motion et <em>sites web</em></h2>
   </div>
   <div class="services-grid">
     <div class="service-card">
@@ -523,20 +521,20 @@
   <div class="contact-inner">
     <div class="contact-left">
       <p class="eyebrow" id="lbl-contact">Contact</p>
-      <h2 id="contact-h2">Parlons de <em>votre projet.</em></h2>
+      <h2 id="contact-h2">Parlons de <em>votre projet</em></h2>
       <p id="contact-desc">Disponible pour des missions de montage vidéo et de création de sites web, ponctuelles ou sur le long terme.</p>
     </div>
     <div class="contact-items">
       <a href="mailto:yas-motion@outlook.fr" class="contact-item">
-        <div class="contact-item-icon">✉</div>
+        <div class="contact-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
         <div class="contact-item-info"><div class="contact-item-label" id="lbl-email">Email</div><div class="contact-item-value">yas-motion@outlook.fr</div></div>
       </a>
       <a href="https://wa.me/213542927828" target="_blank" rel="noopener" class="contact-item">
-        <div class="contact-item-icon">💬</div>
+        <div class="contact-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.7-5.5A8.4 8.4 0 1 1 21 11.5Z"/></svg></div>
         <div class="contact-item-info"><div class="contact-item-label">WhatsApp</div><div class="contact-item-value">+213 542 92 78 28</div></div>
       </a>
       <div class="contact-item static">
-        <div class="contact-item-icon">📍</div>
+        <div class="contact-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10.5c0 5.2-8 11.5-8 11.5s-8-6.3-8-11.5a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10.3" r="2.8"/></svg></div>
         <div class="contact-item-info"><div class="contact-item-label" id="lbl-loc">Zone d'intervention</div><div class="contact-item-value" id="loc-val">À distance — France &amp; international</div></div>
       </div>
     </div>
@@ -661,6 +659,7 @@ var T = {
     "btn-services": "Voir le portfolio",
     "hs1": "projets livrés", "hs2": "vues générées", "hs3": "ans d'expérience",
     "hero-badge-txt": "Disponible pour de nouveaux projets",
+    "hero-cap-t": "vues · Smala Média",
     "lbl-reels": "Portfolio vidéo",
     "reels-h2": "Formats verticaux <em>qui performent</em>",
     "reels-sub": "Chaque montage est pensé pour la rétention : hook dans les 2 premières secondes, rythme serré, sous-titres lisibles. Voici les résultats.",
@@ -676,7 +675,7 @@ var T = {
     "seo1": "Score SEO", "seo2": "Score SEO", "seo3": "Score SEO", "seo4": "Score SEO",
     "seon1": "Lighthouse · mobile", "seon2": "Lighthouse · mobile", "seon3": "Lighthouse · mobile", "seon4": "Lighthouse · mobile",
     "lbl-services": "Services",
-    "services-h2": "Ce que je peux <em>faire pour vous</em>",
+    "services-h2": "Montage, motion et <em>sites web</em>",
     "s1-title": "Montage vertical social",
     "s1-desc": "Reels, TikTok et Shorts calibrés pour la rétention : hook, rythme, sous-titres animés, sound design.",
     "s2-title": "Publicité corporate",
@@ -696,7 +695,7 @@ var T = {
     "about-p2": "Chaque projet est traité avec la même précision : structure narrative, rythme, détails visuels — et côté web, performance, accessibilité et référencement.",
     "stat1": "ans d'expérience", "stat2": "projets livrés", "stat3": "clients satisfaits",
     "lbl-contact": "Contact",
-    "contact-h2": "Parlons de <em>votre projet.</em>",
+    "contact-h2": "Parlons de <em>votre projet</em>",
     "contact-desc": "Disponible pour des missions de montage vidéo et de création de sites web, ponctuelles ou sur le long terme.",
     "lbl-email": "Email", "lbl-loc": "Zone d'intervention",
     "loc-val": "À distance — France &amp; international",
@@ -717,6 +716,7 @@ var T = {
     "btn-services": "شاهد الأعمال",
     "hs1": "مشروع مُنجز", "hs2": "مشاهدة", "hs3": "سنوات خبرة",
     "hero-badge-txt": "متاح لمشاريع جديدة",
+    "hero-cap-t": "مشاهدة · Smala Média",
     "lbl-reels": "أعمال الفيديو",
     "reels-h2": "فيديوهات عمودية <em>تُحقّق النتائج</em>",
     "reels-sub": "كل مونتاج مصمَّم للاحتفاظ بالمشاهد: جذب في أول ثانيتين، إيقاع سريع، ترجمة واضحة. وهذه هي النتائج.",
@@ -752,7 +752,7 @@ var T = {
     "about-p2": "كل مشروع يُعالَج بالدقة نفسها: البنية السردية والإيقاع والتفاصيل البصرية — وفي الويب: الأداء وسهولة الوصول والأرشفة.",
     "stat1": "سنوات خبرة", "stat2": "مشروع مُنجز", "stat3": "عملاء راضون",
     "lbl-contact": "تواصل",
-    "contact-h2": "لنتحدث عن <em>مشروعك.</em>",
+    "contact-h2": "لنتحدث عن <em>مشروعك</em>",
     "contact-desc": "متاح لمهام مونتاج الفيديو وتصميم المواقع، سواء لمرة واحدة أو على المدى الطويل.",
     "lbl-email": "البريد الإلكتروني", "lbl-loc": "نطاق العمل",
     "loc-val": "عن بُعد — فرنسا ودولياً",
