@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Création de site vitrine et référencement local · dès 2 100 € | Yasify</title>
+<meta name="description" content="Site vitrine sur mesure, référencé sur votre activité et votre ville, avec fiche Google Business Profile. Livré en 10 à 15 jours ouvrés, dès 2 100 € tout compris."/>
+<link rel="stylesheet" href="./style.css">
+<script>
+(function(){var t=null;try{t=localStorage.getItem('yas-theme')}catch(e){}
+if(!t){t=(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark'}
+document.documentElement.setAttribute('data-theme',t)})();
+</script>
+
+
+
+<!-- Google Fonts chargé SANS bloquer le rendu : le texte s'affiche tout de
+     suite avec la police système, puis bascule sur Plus Jakarta Sans.
+     media="print" empêche le navigateur de retarder le premier affichage. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap"/>
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap"/>
+</noscript>
+</head>
+<body>
+
+<!-- ============ LOGO SVG (sprite réutilisable) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gChev" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2E92E0"/>
+      <stop offset="55%" stop-color="#2A1B8E"/>
+      <stop offset="100%" stop-color="#1B1466"/>
+    </linearGradient>
+    <linearGradient id="gTri" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8A0BF0"/>
+      <stop offset="100%" stop-color="#F003D1"/>
+    </linearGradient>
+    <symbol id="mark" viewBox="0 0 96.98 100">
+      <path class="mk-chev" d="M3.63,0.30 L28.10,0.60 L29.91,1.51 L55.89,51.06 L55.89,55.29 L41.39,80.97 L33.53,96.37 L31.72,98.19 L28.70,99.40 L5.74,99.70 L3.63,97.58 L3.93,93.96 L25.08,55.59 L25.98,53.78 L25.98,51.36 L0.00,6.34 L0.00,3.02 L1.51,1.21 L3.32,0.60 Z"/>
+      <path class="mk-tri" d="M60.42,0.00 L62.84,0.00 L64.95,1.21 L93.96,20.85 L96.37,23.26 L96.68,24.17 L96.98,26.28 L96.07,29.00 L93.66,31.42 L85.80,37.16 L62.54,52.87 L59.21,52.87 L58.01,51.06 L57.70,45.32 L57.40,4.53 L58.31,1.81 L60.12,0.30 Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a href="#contenu" class="skip-link">Aller au contenu</a>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <a href="./index.html" class="brand" aria-label="Yasify — accueil">
+    <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg>
+    <span class="brand-text">
+      <strong>Yasify</strong>
+      <small>sites web</small>
+    </span>
+  </a>
+
+  <div class="nav-links" id="nav-links">
+    <a href="#realisations">Réalisations</a>
+    <a href="#methode">Méthode</a>
+    <a href="#offres">Offres</a>
+    <a href="#faq">FAQ</a>
+    <a href="./index.html">Montage vidéo</a>
+  </div>
+
+  <div class="nav-right">
+    <button class="icon-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Changer de thème">
+      <svg class="ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g class="rays"><path d="M12 1.6v3M12 19.4v3M1.6 12h3M19.4 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1"/></g></svg>
+      <svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.4 8.4 0 1 1 9.8 4a6.8 6.8 0 0 0 10.2 10.2Z"/></svg>
+    </button>
+    <a href="#offres" class="btn-primary sm">Voir les offres</a>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <p class="eyebrow">Sites vitrines · référencement local</p>
+      <h1>Votre site, trouvé<br/>sur Google<br/><em>dans votre ville</em></h1>
+      <p class="lead">Vous m'envoyez vos textes et vos photos. Je conçois, je code et je référence votre site, avec votre fiche Google Business Profile. Il vous appartient dès la livraison.</p>
+      <div class="hero-actions">
+        <a href="#offres" class="btn-primary">Voir les offres</a>
+        <a href="#realisations" class="btn-ghost">Voir les réalisations</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>10 à 15&nbsp;j</b><span>pour un site vitrine</span></div>
+        <div><b>&gt;&nbsp;85</b><span>note PageSpeed mobile</span></div>
+        <div><b>dès 2&nbsp;100&nbsp;€</b><span>tout compris</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <a class="site-shot hero-shot" href="https://www.idiril-media.com/" target="_blank" rel="noopener"
+         data-mock="idiril">
+        <span class="chrome"><i></i><i></i><i></i><em>idiril-media.com</em></span>
+        <span class="mock">
+          <span class="mock-nav"><b></b><u></u><u></u><u></u><s></s></span>
+          <span class="mock-body">
+            <span class="mock-eyebrow"></span>
+            <span class="mock-h1"></span><span class="mock-h1 short"></span>
+            <span class="mock-p"></span><span class="mock-p short"></span>
+            <span class="mock-btn"></span>
+            <span class="mock-phone"><i></i></span>
+          </span>
+        </span>
+        <span class="shot-inner"></span>
+        <span class="shot-cta">Voir le site ↗</span>
+      </a>
+      <p class="hero-badge"><span class="dot"></span><span>Site livré · Idiril Media</span></p>
+    </div>
+  </div>
+</header>
+
+
+<main id="contenu">
+
+<!-- ============ CLIENTS ============ -->
+<section class="section logos-section" id="clients">
+  <p class="logos-caption">Ils m'ont confié leur site</p>
+  <ul class="logo-strip">
+    <li class="logo-item" role="img" aria-label="Idiril Media"><span class="logo-mark" style="--logo:url('./img/clients/idiril.png');--h:32px;--w:67px"></span></li>
+    <li class="logo-item"><span class="logo-mark" style="--logo:url('./img/clients/obsidian.png');--h:28px;--w:22px"></span><span>Obsidian Agency</span></li>
+    <li class="logo-item"><span class="logo-mark" style="--logo:url('./img/clients/lmavocat.png');--h:28px;--w:29px"></span><span>Cabinet Medjber</span></li>
+    <li class="logo-item"><span>Henna by Inès</span></li>
+  </ul>
+</section>
+
+<!-- ============ RÉALISATIONS ============
+     POUR CHAQUE CARTE : href = l'URL du site, data-mock = l'aperçu dessiné
+     (idiril | avocat | henna | obsidian), --score = l'anneau SEO.
+     Les chiffres de trafic sont des exemples à remplacer par les vrais
+     (Search Console) et par une mesure Lighthouse réelle. -->
+<section class="section alt" id="realisations">
+  <div class="section-head">
+    <p class="eyebrow">Réalisations</p>
+    <h2>Quatre sites <em>livrés à des clients</em></h2>
+    <p class="section-sub">Cliquez sur un aperçu pour ouvrir le site en ligne.</p>
+  </div>
+
+  <div class="sites-grid">
+
+    <!-- Site 1 — Idiril Media -->
+    <article class="site-card">
+      <a class="site-shot" href="https://www.idiril-media.com/" target="_blank" rel="noopener"
+         data-mock="idiril">
+        <span class="chrome"><i></i><i></i><i></i><em>idiril-media.com</em></span>
+        <span class="mock">
+          <span class="mock-nav"><b></b><u></u><u></u><u></u><s></s></span>
+          <span class="mock-body">
+            <span class="mock-eyebrow"></span>
+            <span class="mock-h1"></span><span class="mock-h1 short"></span>
+            <span class="mock-p"></span><span class="mock-p short"></span>
+            <span class="mock-btn"></span>
+            <span class="mock-phone"><i></i></span>
+          </span>
+        </span>
+        <span class="shot-inner"></span>
+        <span class="shot-cta">Voir le site ↗</span>
+      </a>
+      <div class="site-body">
+        <div class="site-head">
+          <h3>Idiril Media — Agence vidéo</h3>
+        </div>
+        <p class="site-desc">Site vitrine complet : offres, résultats clients, FAQ et réservation d'appel.</p>
+        <div class="seo-row">
+          <div class="seo-ring" style="--score:96">
+            <svg viewBox="0 0 44 44" aria-hidden="true"><circle class="ring-bg" cx="22" cy="22" r="18"/><circle class="ring-fg" cx="22" cy="22" r="18"/></svg>
+            <b>96</b>
+          </div>
+          <div class="seo-meta">
+            <span class="seo-lbl">Score SEO</span>
+            <span class="seo-note">Lighthouse · mobile</span>
+          </div>
+          <div class="site-kpis">
+            <div class="kpi"><b>4 200</b><small data-i18n="visites-sem">visites/sem.</small></div>
+            <div class="kpi"><b>6,8%</b><small data-i18n="ctr">taux de clic</small></div>
+            <div class="kpi"><b>128K</b><small data-i18n="impressions">impressions/mois</small></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Site 2 — Cabinet Medjber -->
+    <article class="site-card">
+      <a class="site-shot" href="https://www.medjber-avocat.fr/" target="_blank" rel="noopener"
+         data-mock="avocat">
+        <span class="chrome"><i></i><i></i><i></i><em>medjber-avocat.fr</em></span>
+        <span class="mock">
+          <span class="mock-nav"><b></b><u></u><u></u><u></u><s></s></span>
+          <span class="mock-body">
+            <span class="mock-portrait"></span>
+            <span class="mock-eyebrow"></span>
+            <span class="mock-h1"></span>
+            <span class="mock-p"></span><span class="mock-p"></span><span class="mock-p short"></span>
+          </span>
+        </span>
+        <span class="shot-inner"></span>
+        <span class="shot-cta">Voir le site ↗</span>
+      </a>
+      <div class="site-body">
+        <div class="site-head">
+          <h3>Cabinet Medjber — Site de cabinet</h3>
+        </div>
+        <p class="site-desc">Site de cabinet : domaines d'intervention, présentation de l'équipe et prise de contact.</p>
+        <div class="seo-row">
+          <div class="seo-ring" style="--score:91">
+            <svg viewBox="0 0 44 44" aria-hidden="true"><circle class="ring-bg" cx="22" cy="22" r="18"/><circle class="ring-fg" cx="22" cy="22" r="18"/></svg>
+            <b>91</b>
+          </div>
+          <div class="seo-meta">
+            <span class="seo-lbl">Score SEO</span>
+            <span class="seo-note">Lighthouse · mobile</span>
+          </div>
+          <div class="site-kpis">
+            <div class="kpi"><b>1 900</b><small data-i18n="visites-sem">visites/sem.</small></div>
+            <div class="kpi"><b>5,2%</b><small data-i18n="ctr">taux de clic</small></div>
+            <div class="kpi"><b>64K</b><small data-i18n="impressions">impressions/mois</small></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Site 3 — Henna by Inès -->
+    <article class="site-card">
+      <a class="site-shot" href="https://henna-by-ines.vercel.app/" target="_blank" rel="noopener"
+         data-mock="henna">
+        <span class="chrome"><i></i><i></i><i></i><em>henna-by-ines.vercel.app</em></span>
+        <span class="mock">
+          <span class="mock-nav"><b></b><u></u><u></u><u></u><s></s></span>
+          <span class="mock-body">
+            <span class="mock-photo"></span>
+            <span class="mock-h1 script"></span><span class="mock-h1 script short"></span>
+            <span class="mock-p"></span><span class="mock-p short"></span>
+            <span class="mock-btn"></span>
+          </span>
+        </span>
+        <span class="shot-inner"></span>
+        <span class="shot-cta">Voir le site ↗</span>
+      </a>
+      <div class="site-body">
+        <div class="site-head">
+          <h3>Henna by Inès — Boutique RDV</h3>
+        </div>
+        <p class="site-desc">Portfolio de réalisations, boutique de produits naturels et prise de rendez-vous en ligne.</p>
+        <div class="seo-row">
+          <div class="seo-ring" style="--score:88">
+            <svg viewBox="0 0 44 44" aria-hidden="true"><circle class="ring-bg" cx="22" cy="22" r="18"/><circle class="ring-fg" cx="22" cy="22" r="18"/></svg>
+            <b>88</b>
+          </div>
+          <div class="seo-meta">
+            <span class="seo-lbl">Score SEO</span>
+            <span class="seo-note">Lighthouse · mobile</span>
+          </div>
+          <div class="site-kpis">
+            <div class="kpi"><b>2 800</b><small data-i18n="visites-sem">visites/sem.</small></div>
+            <div class="kpi"><b>7,4%</b><small data-i18n="ctr">taux de clic</small></div>
+            <div class="kpi"><b>76K</b><small data-i18n="impressions">impressions/mois</small></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Site 4 — Obsidian Agency -->
+    <article class="site-card">
+      <a class="site-shot" href="https://www.obsidian-agency.fr/" target="_blank" rel="noopener"
+         data-mock="obsidian">
+        <span class="chrome"><i></i><i></i><i></i><em>obsidian-agency.fr</em></span>
+        <span class="mock">
+          <span class="mock-nav"><b></b><u></u><u></u><u></u><s></s></span>
+          <span class="mock-body center">
+            <span class="mock-crest"></span>
+            <span class="mock-btn"></span>
+            <span class="mock-btn alt"></span>
+            <span class="mock-p short"></span>
+          </span>
+        </span>
+        <span class="shot-inner"></span>
+        <span class="shot-cta">Voir le site ↗</span>
+      </a>
+      <div class="site-body">
+        <div class="site-head">
+          <h3>Obsidian Agency — Site d'agence</h3>
+        </div>
+        <p class="site-desc">Identité sombre et dorée, page process, réalisations et réservation d'appel intégrée.</p>
+        <div class="seo-row">
+          <div class="seo-ring" style="--score:99">
+            <svg viewBox="0 0 44 44" aria-hidden="true"><circle class="ring-bg" cx="22" cy="22" r="18"/><circle class="ring-fg" cx="22" cy="22" r="18"/></svg>
+            <b>99</b>
+          </div>
+          <div class="seo-meta">
+            <span class="seo-lbl">Score SEO</span>
+            <span class="seo-note">Lighthouse · mobile</span>
+          </div>
+          <div class="site-kpis">
+            <div class="kpi"><b>6 100</b><small data-i18n="visites-sem">visites/sem.</small></div>
+            <div class="kpi"><b>11,7%</b><small data-i18n="ctr">taux de clic</small></div>
+            <div class="kpi"><b>195K</b><small data-i18n="impressions">impressions/mois</small></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- ============ MÉTHODE ============ -->
+<section class="section" id="methode">
+  <div class="section-head">
+    <p class="eyebrow">Méthode</p>
+    <h2>Vous fournissez le contenu. <em>Je m'occupe du reste.</em></h2>
+    <p class="section-sub">Trois étapes, un seul interlocuteur du devis à la mise en ligne.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-ico">01</div>
+      <h3>Devis et contenus</h3>
+      <p>Vous validez le devis, versez l'acompte de 40 % et m'envoyez vos textes, photos et logo. Le délai démarre à leur réception.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-ico">02</div>
+      <h3>Conception et référencement</h3>
+      <p>Design sur mesure, code, pages ciblées sur votre activité et votre ville, données structurées, fiche Google Business Profile.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-ico">03</div>
+      <h3>Mise en ligne et prise en main</h3>
+      <p>Le site part en ligne avec Google Analytics et Search Console branchés. 30 minutes de prise en main, puis le solde.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFFRES ============ -->
+<section class="section alt" id="offres">
+  <div class="section-head">
+    <p class="eyebrow">Offres</p>
+    <h2>Trois offres, <em>selon la place que vous visez</em></h2>
+    <p class="section-sub">Prix tout compris, frais de paiement inclus. 40 % à la commande, le solde à la livraison. Le site et le domaine sont à vous.</p>
+  </div>
+  <div class="packs-grid">
+    <article class="pack-card">
+      <div class="pack-top"><h3 class="pack-name">Essentielle</h3></div>
+      <p class="pack-qty">Site vitrine de 5 à 7 pages</p>
+      <p class="pack-price">2&nbsp;100&nbsp;€ <small>tout compris</small></p>
+      <p class="pack-unit">Livré en 10 à 15 jours ouvrés</p>
+      <ul class="pack-list">
+        <li>Design sur mesure, responsive, note PageSpeed mobile supérieure à 85</li>
+        <li>1 page référencée sur votre activité et votre ville</li>
+        <li>Fiche Google Business Profile créée et optimisée</li>
+        <li>Hébergement, nom de domaine et certificat SSL : 1 an inclus</li>
+      </ul>
+      <a href="#contact" class="btn-ghost" data-pack="Essentielle">Choisir Essentielle</a>
+    </article>
+    <article class="pack-card featured">
+      <div class="pack-top"><h3 class="pack-name">Visibilité locale</h3></div>
+      <p class="pack-qty">Tout l'offre Essentielle, plus</p>
+      <p class="pack-price">3&nbsp;800&nbsp;€ <small>tout compris</small></p>
+      <p class="pack-unit">Livré en 3 à 4 semaines</p>
+      <ul class="pack-list">
+        <li>Audit des mots-clés locaux prioritaires</li>
+        <li>3 à 5 pages référencées, une par activité et par ville</li>
+        <li>3 articles de blog rédigés et publiés</li>
+        <li>Coordonnées harmonisées sur 5 annuaires majeurs</li>
+      </ul>
+      <a href="#contact" class="btn-primary" data-pack="Visibilité locale">Choisir Visibilité locale</a>
+    </article>
+    <article class="pack-card">
+      <div class="pack-top"><h3 class="pack-name">Autorité</h3></div>
+      <p class="pack-qty">Tout l'offre Visibilité locale, plus</p>
+      <p class="pack-price">6&nbsp;500&nbsp;€ <small>tout compris</small></p>
+      <p class="pack-unit">Livré en 5 à 7 semaines</p>
+      <ul class="pack-list">
+        <li>Audit concurrentiel et stratégie de contenu sur 6 mois</li>
+        <li>6 articles, une page détaillée par membre de l’équipe, guides PDF</li>
+        <li>Optimisation avancée des Core Web Vitals</li>
+        <li>Rapport mensuel de positionnement pendant 3 mois</li>
+      </ul>
+      <a href="#contact" class="btn-ghost" data-pack="Autorité">Choisir Autorité</a>
+    </article>
+  </div>
+
+  <div class="subs">
+    <div class="subs-head">
+      <h3>Après la mise en ligne</h3>
+      <p>Facultatif · sans engagement · préavis d'un mois</p>
+    </div>
+    <ul class="subs-list">
+      <li><b>Maintenance</b><span>Mises à jour techniques, sauvegardes, surveillance</span><em>100&nbsp;€ / mois</em></li>
+      <li><b>Maintenance + SEO</b><span>Plus le suivi de positionnement et un rapport mensuel</span><em>200&nbsp;€ / mois</em></li>
+      <li><b>Maintenance + SEO + Contenu</b><span>Plus 2 articles par mois, rédigés et publiés</span><em>380&nbsp;€ / mois</em></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="section-head">
+    <p class="eyebrow">Questions</p>
+    <h2>Avant de <em>vous lancer</em></h2>
+  </div>
+  <div class="faq-list">
+    <details>
+      <summary>En combien de temps mon site est-il en ligne ?</summary>
+      <p>10 à 15 jours ouvrés pour l'offre Essentielle, 3 à 4 semaines pour Visibilité locale, 5 à 7 semaines pour Autorité. Le délai court à partir de la réception de vos contenus et de l'acompte.</p>
+    </details>
+    <details>
+      <summary>Le site m'appartient ?</summary>
+      <p>Oui. Le site et le nom de domaine sont à vous dès la livraison, sans abonnement obligatoire pour les garder.</p>
+    </details>
+    <details>
+      <summary>Serai-je premier sur Google ?</summary>
+      <p>Personne ne peut le promettre honnêtement : le référencement est une obligation de moyens. Je mets en place tout ce qui dépend du site (pages ciblées, balises, données structurées, fiche Google Business Profile, vitesse), et les premiers positionnements se mesurent en général entre 3 et 6 mois.</p>
+    </details>
+    <details>
+      <summary>Qui écrit les textes ?</summary>
+      <p>Vous fournissez vos textes de présentation et vos photos. Les articles de blog des offres Visibilité locale et Autorité sont rédigés et publiés par moi.</p>
+    </details>
+    <details>
+      <summary>Pourrai-je modifier mon site moi-même ?</summary>
+      <p>Oui. Une prise en main de 30 minutes est comprise : vous repartez en sachant changer un texte, une photo ou vos horaires.</p>
+    </details>
+    <details>
+      <summary>Comment se passe le paiement ?</summary>
+      <p>40 % à la commande, le solde à la livraison. Les prix affichés sont tout compris, frais de paiement inclus.</p>
+    </details>
+    <details>
+      <summary>Et après la mise en ligne ?</summary>
+      <p>L'hébergement et le domaine sont inclus la première année. Ensuite, vous pouvez prendre un abonnement de maintenance, sans engagement, ou reprendre l'hébergement à votre nom.</p>
+    </details>
+    <details>
+      <summary>Les abonnements sont obligatoires ?</summary>
+      <p>Non. Ils sont sans engagement, avec un préavis d'un mois, et vous gardez la propriété du site dans tous les cas.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <p class="eyebrow">Contact</p>
+      <h2>Parlons de <em>votre site</em></h2>
+      <p>Envoyez-moi le lien de votre site actuel, ou dites-moi que vous n'en avez pas, avec votre activité et votre ville. Je vous réponds avec l'offre qui vous correspond.</p>
+      <p class="contact-pack" id="contact-pack" hidden></p>
+    </div>
+    <div class="contact-items">
+      <a href="mailto:yas-motion@outlook.fr?subject=Site%20web" class="contact-item" id="contact-mail">
+        <div class="contact-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+        <div class="contact-item-info"><div class="contact-item-label">E-mail</div><div class="contact-item-value">yas-motion@outlook.fr</div></div>
+      </a>
+      <a href="https://wa.me/213542927828" target="_blank" rel="noopener" class="contact-item" id="contact-wa">
+        <div class="contact-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.7-5.5A8.4 8.4 0 1 1 21 11.5Z"/></svg></div>
+        <div class="contact-item-info"><div class="contact-item-label">WhatsApp</div><div class="contact-item-value">+213 542 92 78 28</div></div>
+      </a>
+      <div class="contact-item static">
+        <div class="contact-item-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10.5c0 5.2-8 11.5-8 11.5s-8-6.3-8-11.5a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10.3" r="2.8"/></svg></div>
+        <div class="contact-item-info"><div class="contact-item-label">Zone d'intervention</div><div class="contact-item-value">À distance · France et international</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <a href="./index.html" class="brand footer-brand">
+    <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg>
+    <span class="brand-text"><strong>Yasin</strong><small>sites web</small></span>
+  </a>
+  <span>© 2026 Yasin M. Chikh · Tous droits réservés</span>
+  <div class="footer-links" role="navigation" aria-label="Liens du pied de page">
+    <a href="./index.html">Montage vidéo</a>
+    <a href="./sites-web.html">Sites web</a>
+    <a href="./cgu-cgv.html#cgu">CGU</a>
+    <a href="./cgu-cgv.html#cgv">CGV</a>
+    <a href="mailto:yas-motion@outlook.fr">yas-motion@outlook.fr</a>
+  </div>
+</footer>
+
+<!-- ============ CTA COLLANT (smartphone uniquement) ============ -->
+<div class="sticky-cta" id="sticky-cta" data-offers="offres" data-second="Demander un devis">
+  <p class="sticky-cta-txt"><b>dès 2&nbsp;100&nbsp;€</b><small>Site vitrine + référencement local</small></p>
+  <a href="#offres" class="btn-primary" id="sticky-btn">Voir les offres</a>
+</div>
+
+<script src="./pages.js"></script>
+</body>
+</html>
