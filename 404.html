@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Page introuvable | Yasify</title>
+<meta name="description" content="Cette page n'existe pas. Retrouvez le montage vidéo vertical ou la création de site vitrine de Yasify."/>
+<meta name="robots" content="noindex"/>
+<meta name="theme-color" content="#0E1116"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="stylesheet" href="/style.css">
+<script>
+(function(){var t=null;try{t=localStorage.getItem('yas-theme')}catch(e){}
+if(!t){t=(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark'}
+document.documentElement.setAttribute('data-theme',t)})();
+</script>
+
+
+
+<!-- Google Fonts chargé SANS bloquer le rendu : le texte s'affiche tout de
+     suite avec la police système, puis bascule sur Plus Jakarta Sans.
+     media="print" empêche le navigateur de retarder le premier affichage. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap"/>
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap"/>
+</noscript>
+</head>
+<body>
+
+<!-- ============ LOGO SVG (sprite réutilisable) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gChev" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2E92E0"/>
+      <stop offset="55%" stop-color="#2A1B8E"/>
+      <stop offset="100%" stop-color="#1B1466"/>
+    </linearGradient>
+    <linearGradient id="gTri" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8A0BF0"/>
+      <stop offset="100%" stop-color="#F003D1"/>
+    </linearGradient>
+    <symbol id="mark" viewBox="0 0 96.98 100">
+      <path class="mk-chev" d="M3.63,0.30 L28.10,0.60 L29.91,1.51 L55.89,51.06 L55.89,55.29 L41.39,80.97 L33.53,96.37 L31.72,98.19 L28.70,99.40 L5.74,99.70 L3.63,97.58 L3.93,93.96 L25.08,55.59 L25.98,53.78 L25.98,51.36 L0.00,6.34 L0.00,3.02 L1.51,1.21 L3.32,0.60 Z"/>
+      <path class="mk-tri" d="M60.42,0.00 L62.84,0.00 L64.95,1.21 L93.96,20.85 L96.37,23.26 L96.68,24.17 L96.98,26.28 L96.07,29.00 L93.66,31.42 L85.80,37.16 L62.54,52.87 L59.21,52.87 L58.01,51.06 L57.70,45.32 L57.40,4.53 L58.31,1.81 L60.12,0.30 Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a href="#contenu" class="skip-link">Aller au contenu</a>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <a href="/" class="brand" aria-label="Yasify — accueil">
+    <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg>
+    <span class="brand-text">
+      <strong>Yasify</strong>
+      <small>page introuvable</small>
+    </span>
+  </a>
+
+  <div class="nav-links" id="nav-links">
+    <a href="/">Montage vidéo</a>
+    <a href="/sites-web.html">Sites web</a>
+    <a href="/cgu-cgv.html#cgu">CGU</a>
+    <a href="/cgu-cgv.html#cgv">CGV</a>
+  </div>
+
+  <div class="nav-right">
+    <button class="icon-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Changer de thème">
+      <svg class="ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g class="rays"><path d="M12 1.6v3M12 19.4v3M1.6 12h3M19.4 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1"/></g></svg>
+      <svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.4 8.4 0 1 1 9.8 4a6.8 6.8 0 0 0 10.2 10.2Z"/></svg>
+    </button>
+    <a href="/#contact" class="btn-primary sm">Me contacter</a>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main id="contenu" class="legal notfound">
+  <div class="legal-inner">
+    <p class="eyebrow">Erreur 404</p>
+    <h1>Cette page n'existe pas</h1>
+    <p class="legal-meta">L'adresse est peut-être mal saisie, ou la page a changé de place. Voici où trouver ce que vous cherchez.</p>
+
+    <div class="services-grid notfound-grid">
+      <a class="service-card notfound-card" href="/">
+        <div class="service-ico">01</div>
+        <h3>Montage vidéo vertical</h3>
+        <p>Reels, TikTok et Shorts pour marques et créateurs. Packs de 5 à 20 vidéos par mois, dès 450&nbsp;€.</p>
+      </a>
+      <a class="service-card notfound-card" href="/sites-web.html">
+        <div class="service-ico">02</div>
+        <h3>Création de site vitrine</h3>
+        <p>Site sur mesure, référencé sur votre activité et votre ville. Dès 2&nbsp;100&nbsp;€ tout compris.</p>
+      </a>
+    </div>
+
+    <p class="notfound-contact">Une question ? <a href="mailto:yas-motion@outlook.fr">yas-motion@outlook.fr</a></p>
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <a href="/" class="brand footer-brand">
+    <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg>
+    <span class="brand-text"><strong>Yasin</strong><small>page introuvable</small></span>
+  </a>
+  <span>© 2026 Yasin M. Chikh · Tous droits réservés</span>
+  <div class="footer-links" role="navigation" aria-label="Liens du pied de page">
+    <a href="/">Montage vidéo</a>
+    <a href="/sites-web.html">Sites web</a>
+    <a href="/cgu-cgv.html#cgu">CGU</a>
+    <a href="/cgu-cgv.html#cgv">CGV</a>
+    <a href="mailto:yas-motion@outlook.fr">yas-motion@outlook.fr</a>
+  </div>
+</footer>
+
+<script src="/pages.js"></script>
+</body>
+</html>

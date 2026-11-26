@@ -817,3 +817,14 @@ footer a:not(.brand):hover{color:var(--text)}
 .legal strong{color:var(--text);font-weight:500}
 .legal a{color:var(--text);text-underline-offset:3px}
 .about-text p a{color:var(--text);text-underline-offset:3px}
+
+/* =========================================================
+   21. PAGE 404
+   ========================================================= */
+.notfound-grid{margin-top:2rem}
+.notfound-card{text-decoration:none;color:inherit;display:block}
+.notfound-card:focus-visible{outline:2px solid var(--accent-on-surface);outline-offset:3px}
+.notfound-contact{margin-top:1.75rem}
+.legal .notfound-card h3{margin-top:0}
+.legal .notfound-card p{font-size:var(--t-sm);line-height:1.6}
+.legal.notfound{min-height:calc(100svh - 5.5rem)}
